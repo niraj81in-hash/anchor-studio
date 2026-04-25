@@ -1,0 +1,99 @@
+Code Review — Initial Scaffold (056040d)
+==========================================
+
+Overview
+--------
+A well-structured Next.js 14 Pages Router site for Anchor Studio, with a Claude-powered chatbot
+and a pages/api/generate.ts endpoint serving as a content API for the chess-club-hub platform.
+Architecture is clean: config-driven, typed, AI calls are server-side only.
+
+
+Bugs
+----
+
+Missing `/services` page — broken link
+  pages/index.tsx:354 links to `/services` via <Link href="/services">, but no pages/services.tsx
+  exists in the commit. This is a 404 in production.
+
+`player-spotlight` is unimplemented
+  types/index.ts:22 includes 'player-spotlight' in the ContentType union.
+  lib/chess-hub.ts has a system prompt for it in CHESS_CONTENT_PROMPTS but no exported
+  generatePlayerSpotlight() function.
+  pages/api/generate.ts has no `case 'player-spotlight':` — any request with that type silently
+  returns a 400 "Unknown content type" error. The type system doesn't catch this because there's
+  no exhaustiveness check on the switch.
+
+"Five done-for-you services" but there are six
+  pages/index.tsx:384 says "Five done-for-you services." lib/config.ts:SERVICES has 6 entries.
+
+`revealRefs` is dead code
+  pages/index.tsx:305 creates `const revealRefs = useRef<HTMLElement[]>([])` but it's never
+  populated. The IntersectionObserver queries via document.querySelectorAll('.reveal') directly,
+  making the ref unused.
+
+
+Security
+--------
+
+`/api/generate` has no authentication
+  This is the external contract surface for chess-club-hub, but any caller can POST to it —
+  there's no shared secret, API key header check, or origin validation. Someone discovering the
+  endpoint can generate arbitrary Claude content at your cost. Add an
+  `Authorization: Bearer <secret>` check using an env var like GENERATE_API_SECRET.
+
+No rate limiting on either API route
+  /api/chat and /api/generate have no rate limiting. The chatbot in particular is publicly
+  accessible — a simple loop could exhaust your Anthropic credits quickly. Consider a lightweight
+  solution like upstash/ratelimit or edge middleware.
+
+Unsafe `as` casts in generate.ts
+  pages/api/generate.ts:35-58 casts all incoming `data` fields with `as` (e.g.,
+  data.totalGames as number, data.game as Parameters<...>). There's zero runtime validation.
+  If chess-club-hub sends malformed data, TypeScript's guarantees evaporate and you get opaque
+  runtime errors or unintended Claude prompts. Use zod or explicit type guards to validate the
+  `data` payload per content type before passing to the generator functions.
+
+
+Code Quality
+------------
+
+Pricing data lives in three places — will drift
+  lib/config.ts is supposed to be the single source of truth, but lib/anthropic.ts:ANCHOR_STUDIO_SYSTEM
+  (lines 27-34) hardcodes pricing, and components/ChatBot.tsx:DEMO_RESPONSES (lines 26-35) also
+  hardcodes pricing. When prices change, there are three files to update. The ANCHOR_STUDIO_SYSTEM
+  prompt could import from lib/config.ts; DEMO_RESPONSES in ChatBot are a demo fallback and are
+  harder to de-duplicate, but at minimum should have a comment pointing to config.ts as the
+  source of truth.
+
+`'use client'` is a no-op in Pages Router
+  components/ChatBot.tsx:1 has 'use client'. This directive is an App Router concept and has no
+  effect in the Pages Router. It's misleading — remove it.
+
+No prompt caching on any Claude call
+  lib/anthropic.ts makes all requests without Anthropic prompt caching. ANCHOR_STUDIO_SYSTEM is
+  a fixed 350-token string reused on every /api/chat call — a perfect candidate for
+  cache_control: { type: 'ephemeral' } on the system message. On generateContent, the `context`
+  (system prompt) is also static per content type. Adding caching would materially cut API costs
+  for a site with live traffic.
+
+The `eval` keyword is used in integration code examples
+  pages/integration.tsx:548 shows `const eval = engine.evaluate(fen);` in a <pre> block.
+  `eval` is a reserved word in JavaScript. It's display-only code, but it's a bad example to
+  show to developers integrating the platform.
+
+
+Prioritised Action List
+-----------------------
+  [High]   Add auth to /api/generate (shared secret via env var)
+  [High]   Create pages/services.tsx or change the link
+  [High]   Validate `data` payload in generate.ts (zod or guards)
+  [Medium] Implement player-spotlight or remove from ContentType
+  [Medium] Add rate limiting to both API routes
+  [Medium] Add prompt caching to lib/anthropic.ts
+  [Low]    Remove 'use client' from ChatBot.tsx
+  [Low]    Fix "Five done-for-you services" copy
+  [Low]    Delete unused revealRefs
+  [Low]    Fix `eval` example in integration.tsx
+
+Overall the architecture is sound and the AI layer is cleanly separated. The main risks before
+going live are the unauthenticated generate endpoint and the missing rate limiting.

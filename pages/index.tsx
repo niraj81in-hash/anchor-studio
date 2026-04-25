@@ -87,7 +87,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="reveal">
             <p className="text-[0.72rem] font-medium uppercase tracking-widest text-teal mb-2">What we deliver</p>
-            <h2 className="font-serif text-[clamp(1.9rem,3vw,2.8rem)] text-ink tracking-tight">Five done-for-you services.</h2>
+            <h2 className="font-serif text-[clamp(1.9rem,3vw,2.8rem)] text-ink tracking-tight">Six done-for-you services.</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-rule border border-rule rounded-xl overflow-hidden mt-10 reveal" style={{ transitionDelay: '0.1s' }}>
             {SERVICES.map(s => (
