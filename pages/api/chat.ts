@@ -1,14 +1,38 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { chat } from '@/lib/anthropic';
 import type { ChatRequest, ChatResponse } from '@/types';
+import {
+  checkRateLimit,
+  getRateLimitKey,
+  sanitizeInput,
+  setSecurityHeaders,
+  setCorsHeaders,
+  validateRequestSize,
+} from '@/lib/security';
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ChatResponse>,
 ) {
+  // Set security headers
+  setSecurityHeaders(res);
+  setCorsHeaders(res);
+
   // Only accept POST
   if (req.method !== 'POST') {
     return res.status(405).json({ reply: '', error: 'Method not allowed' });
+  }
+
+  // Check request size
+  if (!validateRequestSize(req)) {
+    return res.status(413).json({ reply: '', error: 'Request payload too large' });
+  }
+
+  // Rate limiting
+  const clientKey = getRateLimitKey(req);
+  if (!checkRateLimit(clientKey)) {
+    res.setHeader('Retry-After', '60');
+    return res.status(429).json({ reply: '', error: 'Too many requests. Please try again later.' });
   }
 
   // Validate API key is configured
@@ -28,6 +52,10 @@ export default async function handler(
   const cleanMessages = messages
     .filter(m => m.role === 'user' || m.role === 'assistant')
     .filter(m => typeof m.content === 'string' && m.content.trim().length > 0)
+    .map(m => ({
+      ...m,
+      content: sanitizeInput(m.content),
+    }))
     .slice(-10);
 
   try {
