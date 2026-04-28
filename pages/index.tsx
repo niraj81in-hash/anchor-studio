@@ -87,7 +87,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="reveal">
             <p className="text-[0.72rem] font-medium uppercase tracking-widest text-teal mb-2">What we deliver</p>
-            <h2 className="font-serif text-[clamp(1.9rem,3vw,2.8rem)] text-ink tracking-tight">Six done-for-you services.</h2>
+            <h2 className="font-serif text-[clamp(1.9rem,3vw,2.8rem)] text-ink tracking-tight">Five done-for-you services.</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-rule border border-rule rounded-xl overflow-hidden mt-10 reveal" style={{ transitionDelay: '0.1s' }}>
             {SERVICES.map(s => (
@@ -95,7 +95,10 @@ export default function Home() {
                 <div className="text-2xl mb-4">{s.icon}</div>
                 <div className="font-medium text-[0.95rem] text-ink mb-2">{s.name}</div>
                 <div className="text-[0.85rem] text-mid leading-relaxed mb-4">{s.description}</div>
-                <div className="font-serif text-[1.15rem] text-teal">{s.price}</div>
+                <a href={SITE.calendly} target="_blank" rel="noopener noreferrer"
+                   className="text-teal text-[0.9rem] font-medium hover:text-teal-dark transition-colors">
+                  Get a quote →
+                </a>
               </div>
             ))}
           </div>
@@ -200,8 +203,6 @@ export default function Home() {
                   </span>
                 )}
                 <div className={`text-[0.72rem] font-semibold uppercase tracking-widest mb-2 ${plan.popular ? 'text-white/45' : 'text-mid'}`}>{plan.name}</div>
-                <div className={`font-serif text-[2.2rem] leading-none ${plan.popular ? 'text-white' : 'text-ink'}`}>{plan.price}</div>
-                <div className={`text-[0.85rem] mb-5 ${plan.popular ? 'text-white/40' : 'text-mid'}`}>{plan.period}</div>
                 <hr className={`border-t mb-5 ${plan.popular ? 'border-white/12' : 'border-rule'}`} />
                 <ul className="flex flex-col gap-2 flex-1 mb-6">
                   {plan.features.map(f => (
@@ -213,7 +214,7 @@ export default function Home() {
                 </ul>
                 <a href={SITE.calendly} target="_blank" rel="noopener noreferrer"
                    className={`block text-center py-2.5 rounded-lg text-[0.88rem] font-medium transition-colors ${plan.popular ? 'bg-teal text-white hover:bg-teal-dark' : 'border border-rule text-ink hover:bg-ink hover:text-white hover:border-ink'}`}>
-                  Get started
+                  Let&apos;s Talk
                 </a>
               </div>
             ))}

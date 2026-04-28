@@ -62,7 +62,7 @@ export default function Integration() {
           {/* CTA */}
           <div className="mt-14 p-8 bg-teal/10 border border-teal-mid/30 rounded-xl">
             <h2 className="font-serif text-white text-[1.6rem] mb-3">Want chess club content that runs automatically?</h2>
-            <p className="text-white/60 mb-6 max-w-lg">Our Chess Club tier at $500/month includes chess-club-hub integration. Newsletters, tournament recaps, and player spotlights — all generated from your club&apos;s actual game data.</p>
+            <p className="text-white/60 mb-6 max-w-lg">Our Chess Club tier includes chess-club-hub integration. Newsletters, tournament recaps, and player spotlights — all generated from your club&apos;s actual game data.</p>
             <a href={SITE.calendly} target="_blank" rel="noopener noreferrer"
                className="inline-block bg-teal text-white px-6 py-3 rounded-lg text-[0.9rem] font-medium hover:bg-teal-dark transition-colors">
               Book a free discovery call

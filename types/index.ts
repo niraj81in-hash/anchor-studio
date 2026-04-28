@@ -56,14 +56,11 @@ export interface ClubStats {
 export interface Service {
   name: string;
   description: string;
-  price: string;
   icon: string;
 }
 
 export interface PricingPlan {
   name: string;
-  price: string;
-  period: string;
   features: string[];
   popular?: boolean;
   chessHub?: boolean;

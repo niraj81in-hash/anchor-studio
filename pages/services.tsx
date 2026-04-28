@@ -37,7 +37,10 @@ export default function Services() {
                 <div className="text-2xl mb-4">{s.icon}</div>
                 <div className="font-medium text-[0.95rem] text-ink mb-2">{s.name}</div>
                 <div className="text-[0.85rem] text-mid leading-relaxed mb-5 flex-1">{s.description}</div>
-                <div className="font-serif text-[1.15rem] text-teal">{s.price}</div>
+                <a href={SITE.calendly} target="_blank" rel="noopener noreferrer"
+                   className="text-teal text-[0.9rem] font-medium hover:text-teal-dark transition-colors">
+                  Get a custom quote →
+                </a>
               </div>
             ))}
           </div>
@@ -78,8 +81,7 @@ export default function Services() {
             </Link>
           </div>
           <div className="sm:w-64 bg-white/5 border border-white/10 rounded-xl p-6 flex-shrink-0">
-            <div className="font-serif text-[2rem] text-teal-mid leading-none mb-1">$500</div>
-            <div className="text-white/40 text-[0.85rem] mb-4">/month</div>
+            <div className="text-white/40 text-[0.85rem] mb-4">Chess Club Content</div>
             <ul className="flex flex-col gap-2">
               {['Monthly club newsletter', '4 tournament recap posts', 'chess-club-hub integration', 'Player spotlight content', 'Cancel anytime'].map(f => (
                 <li key={f} className="flex gap-2 items-start text-[0.83rem] text-white/60">
@@ -88,6 +90,10 @@ export default function Services() {
                 </li>
               ))}
             </ul>
+            <a href={SITE.calendly} target="_blank" rel="noopener noreferrer"
+               className="block text-center mt-6 bg-teal text-white px-4 py-2 rounded-lg text-[0.85rem] font-medium hover:bg-teal-dark transition-colors">
+              Book a Call
+            </a>
           </div>
         </div>
       </section>

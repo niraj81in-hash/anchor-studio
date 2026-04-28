@@ -10,38 +10,31 @@ export const SITE = {
 } as const;
 
 export const FOUNDER = {
-  name:    'Nivaan',
+  name:    'Nivaan:',
   title:   'Chess National Master',
-  rating:  '2200+',
-  njRank:  '#2 in New Jersey',
   grade:   '8th grade, Metuchen NJ',
   bio:     'Nivaan reached Chess National Master — a title held by fewer than 2% of rated players — while building two technology ventures, earning AMC and MATHCOUNTS honours, and publishing poetry for four consecutive years. He founded Anchor Studio because the same disciplines that drive elite chess — pattern recognition, long-game thinking, and systematic precision — are exactly what great content strategy requires.',
   chips: [
     '♛ Chess National Master',
     'USCF 2200+ · NJ #2',
-    'AMC 8 Honor Roll',
-    'MATHCOUNTS Best in School',
-    'Purple Comet 3rd Place State',
-    'Stevens Math Olympiad Top 3',
+    'Accolades and recognition in multiple National Math contests',
     'Published Poet — 4 years',
     'chess-club-hub founder',
   ],
 } as const;
 
 export const SERVICES: Service[] = [
-  { name: 'AI Content Package',      price: '$750/mo',            icon: '✍️', description: '4 blog posts + 12 social captions/month, written in your brand voice.' },
-  { name: 'Chess Club Content',       price: '$500/mo',            icon: '♟',  description: 'Newsletters, tournament recaps, player spotlights — built for clubs using chess-club-hub.' },
-  { name: 'SEO Blog Retainer',        price: '$1,500/mo',          icon: '📈', description: '8 keyword-optimised posts per month to rank on Google and drive organic leads.' },
-  { name: 'Email Sequence Buildout',  price: '$1,200 one-time',    icon: '📧', description: 'Welcome, nurture, and sales sequences — written once, working forever.' },
-  { name: 'AI Chatbot Setup',         price: '$2,500 + $300/mo',   icon: '🤖', description: 'Claude-powered chatbot that qualifies leads and answers client questions 24/7.' },
-  { name: 'AI Workflow Audit',        price: '$3,000 one-time',    icon: '⚙️', description: 'Map and automate 3 business processes — cut hours from your week permanently.' },
+  { name: 'AI Content Package',      icon: '✍️', description: '4 blog posts + 12 social captions/month, written in your brand voice.' },
+  { name: 'Chess Club Content',       icon: '♟',  description: 'Newsletters, tournament recaps, player spotlights — built for clubs using chess-club-hub.' },
+  { name: 'SEO Blog Retainer',        icon: '📈', description: '8 keyword-optimised posts per month to rank on Google and drive organic leads.' },
+  { name: 'Email Sequence Buildout',  icon: '📧', description: 'Welcome, nurture, and sales sequences — written once, working forever.' },
+  { name: 'AI Chatbot Setup',         icon: '🤖', description: 'Claude-powered chatbot that qualifies leads and answers client questions 24/7.' },
+  { name: 'AI Workflow Audit',        icon: '⚙️', description: 'Map and automate 3 business processes — cut hours from your week permanently.' },
 ];
 
 export const PRICING: PricingPlan[] = [
   {
     name: 'Chess Club',
-    price: '$500',
-    period: '/month',
     chessHub: true,
     features: [
       'Monthly club newsletter',
@@ -53,8 +46,6 @@ export const PRICING: PricingPlan[] = [
   },
   {
     name: 'Growth',
-    price: '$1,500',
-    period: '/month',
     popular: true,
     features: [
       '8 SEO blog posts/month',
@@ -67,8 +58,6 @@ export const PRICING: PricingPlan[] = [
   },
   {
     name: 'Full Service',
-    price: '$2,500',
-    period: '/month',
     features: [
       'Everything in Growth',
       'AI chatbot for your site',
@@ -96,7 +85,7 @@ export const HOW_IT_WORKS = [
 ] as const;
 
 export const COMPARE_ROWS = [
-  { label: 'Monthly cost',              agency: '$3,000–$10,000', freelancer: '$500–$1,500', anchor: '$500–$2,500'      },
+  { label: 'Monthly cost',              agency: '$3,000–$10,000', freelancer: '$500–$1,500', anchor: 'Custom — Book a Call'      },
   { label: 'Turnaround',                agency: '1–2 weeks',      freelancer: '3–7 days',    anchor: '1–3 days'         },
   { label: 'AI-powered',                agency: 'Rarely',         freelancer: 'Sometimes',   anchor: 'Always'           },
   { label: 'Chess domain expertise',    agency: 'Never',          freelancer: 'Unlikely',    anchor: 'National Master'  },

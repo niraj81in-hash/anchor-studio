@@ -11,9 +11,9 @@ const SUGGESTIONS = [
 ];
 
 const DEMO_RESPONSES: Record<string, string> = {
-  price:    "Our plans start at $500/month for chess club content and $750/month for the Starter package. Growth at $1,500/mo is our most popular — 8 SEO posts, 24 captions, and a newsletter. Want to book a free call to find the right fit?",
-  cost:     "Our plans start at $500/month for chess club content and $750/month for the Starter package. Growth at $1,500/mo is our most popular — 8 SEO posts, 24 captions, and a newsletter. Want to book a free call to find the right fit?",
-  much:     "Our plans start at $500/month for chess club content and $750/month for the Starter package. Growth at $1,500/mo is our most popular — 8 SEO posts, 24 captions, and a newsletter. Want to book a free call to find the right fit?",
+  price:    "Pricing depends on your needs — I'd love to set up a quick call to walk you through options. Want me to share our booking link?",
+  cost:     "Pricing depends on your needs — I'd love to set up a quick call to walk you through options. Want me to share our booking link?",
+  much:     "Pricing depends on your needs — I'd love to set up a quick call to walk you through options. Want me to share our booking link?",
   fast:     "We deliver first drafts within 24-48 hours — compared to 1-2 weeks at traditional agencies. AI-powered workflow is what makes that possible.",
   deliver:  "We deliver first drafts within 24-48 hours — compared to 1-2 weeks at traditional agencies. AI-powered workflow is what makes that possible.",
   book:     "You can book a free 30-minute discovery call at your convenience — no pitch, just a clear plan. Email us at hello@getanchorstudio.com to get started.",

@@ -23,14 +23,13 @@ About Anchor Studio:
 - Primary clients: chess clubs, tutoring centres, real estate agents, local businesses
 - Website: getanchorstudio.com | Email: hello@getanchorstudio.com
 
-Services & pricing:
-- Chess Club Content: $500/mo — newsletters, tournament recaps, player spotlights
-- Starter: $750/mo — 4 blog posts + 12 social captions
-- Growth: $1,500/mo — 8 SEO posts + 24 captions + newsletter (most popular)
-- Full Service: $2,500/mo — everything in Growth + AI chatbot + email sequences
-- Email Sequence Buildout: $1,200 one-time
-- AI Chatbot Setup: $2,500 + $300/mo
-- AI Workflow Audit: $3,000 one-time
+Services & process:
+- AI Content Package: 4 blog posts + 12 social captions/month, written in your brand voice
+- Chess Club Content: Newsletters, tournament recaps, player spotlights — built for clubs using chess-club-hub
+- SEO Blog Retainer: 8 keyword-optimised posts per month to rank on Google and drive organic leads
+- Email Sequence Buildout: Welcome, nurture, and sales sequences — written once, working forever
+- AI Chatbot Setup: Claude-powered chatbot that qualifies leads and answers client questions 24/7
+- AI Workflow Audit: Map and automate 3 business processes — cut hours from your week permanently
 
 Process: Free 30-min discovery call → brief → first draft in 24-48hrs → approve → publish.
 

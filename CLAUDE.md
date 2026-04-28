@@ -29,11 +29,13 @@ Copy `.env.local.example` to `.env.local` and fill in:
 
 ### Single source of truth
 
-`lib/config.ts` owns all site copy — services, pricing, niches, comparison table, founder bio, how-it-works steps. Pages import from here; never hardcode content in page files.
+`lib/config.ts` owns all site copy — services, niches, comparison table, founder bio, how-it-works steps. Pages import from here; never hardcode content in page files.
+
+**Pricing Information**: All pricing details are now stored in `/internal/pricing-reference.md` (internal-only, not deployed). Public-facing pages use CTAs like "Book a Free Strategy Call" or "Get a Custom Quote" instead of displaying prices. The `/pricing` page contains a Calendly embed for requesting custom quotes.
 
 ### Claude / AI layer
 
-- `lib/anthropic.ts` — instantiates the Anthropic client once, exports `chat()` (Haiku, 400 tokens, for the chatbot) and `generateContent()` (Sonnet, for long-form content). Contains `ANCHOR_STUDIO_SYSTEM` — the chatbot's persona prompt.
+- `lib/anthropic.ts` — instantiates the Anthropic client once, exports `chat()` (Haiku, 400 tokens, for the chatbot) and `generateContent()` (Sonnet, for long-form content). Contains `ANCHOR_STUDIO_SYSTEM` — the chatbot's persona prompt (does NOT quote specific prices).
 - `lib/chess-hub.ts` — builds chess-specific prompts and calls `generateContent()`. Contains one exported function per `ContentType`: `generateNewsletter`, `annotateGame`, `generateTournamentRecap`, `generateSocialPost`, `generateLesson`.
 
 All Claude calls are **server-side only**. `ANTHROPIC_API_KEY` never reaches the browser.
