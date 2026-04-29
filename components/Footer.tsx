@@ -9,10 +9,10 @@ export default function Footer() {
       </Link>
       <div className="flex flex-wrap gap-5">
         {[
-          { label: 'Services',    href: '/services'    },
-          { label: 'Chess Hub',   href: '/integration' },
-          { label: 'Pricing',     href: '/pricing'     },
+          { label: 'Services',    href: '/#services'    },
+          { label: 'Pricing',     href: '/#pricing'     },
           { label: 'About',       href: '/about'       },
+          { label: 'Contact',     href: `mailto:${SITE.email}` },
         ].map(({ label, href }) => (
           <Link key={href} href={href} className="text-[0.78rem] text-white/40 hover:text-white transition-colors no-underline">
             {label}
@@ -23,7 +23,7 @@ export default function Footer() {
         </a>
       </div>
       <p className="text-[0.72rem] text-white/30 w-full sm:w-auto">
-        © {new Date().getFullYear()} Anchor Studio · Founded by Nivaan in Metuchen, NJ
+        © 2026 Anchor Studio · Founded by Nivaan in Metuchen, NJ
       </p>
     </footer>
   );

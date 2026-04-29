@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1777441438874" clover="3.2.0">
-  <project timestamp="1777441438874" name="All files">
-    <metrics statements="246" coveredstatements="57" conditionals="170" coveredconditionals="21" methods="57" coveredmethods="11" elements="473" coveredelements="89" complexity="0" loc="246" ncloc="246" packages="3" files="11" classes="11"/>
+<coverage generated="1777445480721" clover="3.2.0">
+  <project timestamp="1777445480721" name="All files">
+    <metrics statements="248" coveredstatements="57" conditionals="170" coveredconditionals="21" methods="57" coveredmethods="11" elements="475" coveredelements="89" complexity="0" loc="248" ncloc="248" packages="3" files="11" classes="11"/>
     <package name="components">
       <metrics statements="90" coveredstatements="9" conditionals="60" coveredconditionals="4" methods="32" coveredmethods="4"/>
       <file name="ChatBot.tsx" path="/Users/nirajshrivastava/Documents/anchor-studio/components/ChatBot.tsx">
@@ -111,25 +111,25 @@
       </file>
     </package>
     <package name="lib">
-      <metrics statements="84" coveredstatements="22" conditionals="50" coveredconditionals="6" methods="19" coveredmethods="3"/>
+      <metrics statements="86" coveredstatements="22" conditionals="50" coveredconditionals="6" methods="19" coveredmethods="3"/>
       <file name="anthropic.ts" path="/Users/nirajshrivastava/Documents/anchor-studio/lib/anthropic.ts">
         <metrics statements="16" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
-        <line num="49" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="55" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="56" count="0" type="stmt"/>
-        <line num="57" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="58" count="0" type="stmt"/>
-        <line num="60" count="0" type="stmt"/>
-        <line num="64" count="0" type="stmt"/>
-        <line num="69" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="75" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="76" count="0" type="stmt"/>
-        <line num="77" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="78" count="0" type="stmt"/>
-        <line num="80" count="0" type="stmt"/>
       </file>
       <file name="chess-hub.ts" path="/Users/nirajshrivastava/Documents/anchor-studio/lib/chess-hub.ts">
         <metrics statements="25" coveredstatements="0" conditionals="22" coveredconditionals="0" methods="10" coveredmethods="0"/>
@@ -160,14 +160,16 @@
         <line num="136" count="0" type="stmt"/>
       </file>
       <file name="config.ts" path="/Users/nirajshrivastava/Documents/anchor-studio/lib/config.ts">
-        <metrics statements="7" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="9" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="3" count="0" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
-        <line num="70" count="0" type="stmt"/>
-        <line num="79" count="0" type="stmt"/>
-        <line num="86" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="80" count="0" type="stmt"/>
+        <line num="107" count="0" type="stmt"/>
+        <line num="116" count="0" type="stmt"/>
       </file>
       <file name="security.ts" path="/Users/nirajshrivastava/Documents/anchor-studio/lib/security.ts">
         <metrics statements="36" coveredstatements="22" conditionals="18" coveredconditionals="6" methods="7" coveredmethods="3"/>
