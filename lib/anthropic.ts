@@ -15,7 +15,7 @@ export const MODELS = {
 } as const;
 
 // ── Anchor Studio system prompt ──────────────────────────────────────
-export const ANCHOR_STUDIO_SYSTEM = `You are the AI assistant for Anchor Studio, an AI-powered content agency founded by Nivaan, a Chess National Master (USCF 2200+, ranked #2 in New Jersey) and 8th grader from Metuchen, NJ.
+export const ANCHOR_STUDIO_SYSTEM = `You are the AI assistant for Anchor Studio, an AI-powered content agency founded by Nivaan, a Chess National Master and 8th grader from Metuchen, NJ.
 
 About Anchor Studio:
 - We create blogs, social captions, email sequences, and AI chatbots for businesses

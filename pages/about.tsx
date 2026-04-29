@@ -9,7 +9,7 @@ export default function About() {
     <>
       <Head>
         <title>About Nivaan — Anchor Studio Founder</title>
-        <meta name="description" content="Anchor Studio is founded by Nivaan, a Chess National Master (USCF 2200+, NJ #2), 8th grader, AMC and MATHCOUNTS honours, published poet, and software builder." />
+        <meta name="description" content="Anchor Studio is founded by Nivaan, a Chess National Master, 8th grader, nationally recognized in competitive mathematics, published poet, and software builder." />
       </Head>
       <Nav />
 
@@ -29,8 +29,8 @@ export default function About() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10">
             {[
               { n: 'NM',    l: 'National Master'   },
-              { n: '2200+', l: 'USCF Rating'       },
-              { n: '#2',    l: 'New Jersey rank'   },
+              { n: 'National Master', l: 'Chess title'       },
+              { n: 'Elite',    l: 'Math honors'   },
               { n: '2',     l: 'Active ventures'   },
             ].map(({ n, l }) => (
               <div key={l} className="bg-white/5 rounded-xl p-4 text-center border border-white/10">

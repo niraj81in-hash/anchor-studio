@@ -25,7 +25,7 @@ export default function Home() {
         <title>Anchor Studio — AI Content by a Chess National Master</title>
         <meta name="description" content="Anchor Studio is founded by Nivaan, a Chess National Master. AI-powered content for chess clubs, tutoring centres, and growing businesses." />
         <meta property="og:title" content="Anchor Studio — AI Content by a Chess National Master" />
-        <meta property="og:description" content="Content strategy is just chess for your brand. Founded by Nivaan, USCF 2200+, NJ #2." />
+        <meta property="og:description" content="Content strategy is just chess for your brand. Founded by Nivaan, Chess National Master." />
         <meta property="og:url" content={SITE.domain} />
       </Head>
 
@@ -48,7 +48,7 @@ export default function Home() {
           </h1>
 
           <p className="text-[1.05rem] text-white/60 max-w-lg mt-5 leading-relaxed">
-            Anchor Studio is founded by Nivaan — Chess National Master, ranked #2 in New Jersey. AI-powered content for businesses that want to grow without hiring a full agency.
+            Anchor Studio is founded by Nivaan — Chess National Master. AI-powered content for businesses that want to grow without hiring a full agency.
           </p>
 
           <div className="flex flex-wrap gap-4 mt-8">
@@ -65,8 +65,8 @@ export default function Home() {
           {/* Stats */}
           <div className="flex flex-wrap gap-10 mt-14 pt-10 border-t border-white/10">
             {[
-              { n: '2200+',  l: 'USCF rating'         },
-              { n: '#2',     l: 'Ranked, New Jersey'   },
+              { n: 'National Master',  l: 'Chess title'         },
+              { n: 'Elite',     l: 'Math competition honors'   },
               { n: '24hr',   l: 'Content turnaround'   },
               { n: '3×',     l: 'Lower than agencies'  },
             ].map(({ n, l }) => (
