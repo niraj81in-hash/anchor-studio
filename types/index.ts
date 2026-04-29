@@ -61,26 +61,7 @@ export interface Service {
 
 export interface PricingPlan {
   name: string;
-  price?: string;
   features: string[];
   popular?: boolean;
   chessHub?: boolean;
-}
-
-export interface PortfolioSample {
-  title: string;
-  type: string;
-  excerpt: string;
-  content: string;
-}
-
-export interface PositioningFeature {
-  icon: string;
-  title: string;
-  description: string;
-}
-
-export interface Positioning {
-  paragraph: string;
-  features: PositioningFeature[];
 }

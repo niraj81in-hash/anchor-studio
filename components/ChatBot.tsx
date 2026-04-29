@@ -5,7 +5,7 @@ import type { Message } from '@/types';
 
 const SUGGESTIONS = [
   'What do you offer?',
-  'What\'s the pricing?',
+  'How much does it cost?',
   'How fast do you deliver?',
   'Book a free call',
 ];
@@ -176,7 +176,7 @@ export default function ChatBot() {
             <div className="flex gap-2 items-end">
               <div className="w-7 h-7 rounded-full bg-teal flex items-center justify-center text-white text-[0.6rem] font-semibold flex-shrink-0" aria-hidden="true">AS</div>
               <div className="bg-warm rounded-xl rounded-bl px-3 py-2 text-[0.875rem] text-ink leading-relaxed max-w-[78%]">
-                Hi! I&apos;m Nivaan&apos;s AI assistant. Ask me about services, pricing, or how Anchor Studio works.
+                Hi! I&apos;m the Anchor Studio AI. Ask me about our services, pricing, or chess club content.
               </div>
             </div>
           )}
