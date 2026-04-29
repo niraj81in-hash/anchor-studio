@@ -9,7 +9,7 @@ export default function About() {
     <>
       <Head>
         <title>About Nivaan — Anchor Studio Founder</title>
-        <meta name="description" content="Anchor Studio is founded by Nivaan, a Chess National Master, 8th grader, nationally recognized in competitive mathematics, published poet, and software builder." />
+        <meta name="description" content="Anchor Studio is founded by Nivaan, a Chess National Master, nationally recognized for strategic content and software building." />
       </Head>
       <Nav />
 
@@ -24,7 +24,6 @@ export default function About() {
           <h1 className="font-serif text-[clamp(2.4rem,5vw,4rem)] text-white leading-tight tracking-tight">
             {FOUNDER.name}
           </h1>
-          <p className="text-teal-mid text-[1rem] mt-2">{FOUNDER.grade}</p>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10">
             {[

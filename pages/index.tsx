@@ -100,18 +100,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CHESS HUB PREVIEW ─────────────────────────────────────── */}
-      <section className="bg-ink py-20 px-[6%]">
-        <div className="max-w-5xl mx-auto reveal">
-          <p className="text-[0.72rem] font-medium uppercase tracking-widest text-teal-mid mb-2">Bonus: chess-club-hub integration</p>
-          <h2 className="font-serif text-[clamp(1.9rem,3vw,2.6rem)] text-white tracking-tight max-w-xl">Run a chess club? We also offer native integration with chess-club-hub.</h2>
-          <p className="text-white/55 mt-4 max-w-lg leading-relaxed">Anchor Studio connects directly with chess-club-hub — every game, tournament, and player milestone becomes content automatically.</p>
-          <Link href="/integration" className="inline-block mt-6 text-teal-mid text-[0.9rem] font-medium hover:text-white transition-colors">
-            See all 6 integration points →
-          </Link>
-        </div>
-      </section>
-
       {/* ── PRICING ───────────────────────────────────────────────── */}
       <section className="bg-white py-20 px-[6%]" id="how">
         <div className="max-w-5xl mx-auto">

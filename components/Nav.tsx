@@ -9,7 +9,7 @@ export default function Nav() {
       </Link>
       <div className="flex gap-7 items-center">
         <Link href="/services"     className="text-[0.85rem] font-medium text-white/60 hover:text-white transition-colors hidden sm:block">Services</Link>
-        <Link href="/integration"  className="text-[0.85rem] font-medium text-white/60 hover:text-white transition-colors hidden sm:block">Chess Hub</Link>
+        <Link href="/chess-clubs" className="text-[0.85rem] font-medium text-white/60 hover:text-white transition-colors hidden sm:block">For Chess Clubs</Link>
         <Link href="/pricing"      className="text-[0.85rem] font-medium text-white/60 hover:text-white transition-colors hidden sm:block">Pricing</Link>
         <Link href="/about"        className="text-[0.85rem] font-medium text-white/60 hover:text-white transition-colors hidden sm:block">About</Link>
         <a

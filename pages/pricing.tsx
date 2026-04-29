@@ -53,7 +53,7 @@ export default function Pricing() {
               {[
                 { q: 'How does the discovery call work?', a: 'It&apos;s a free 30-minute conversation where we learn about your business, goals, and content needs. We&apos;ll discuss options and create a custom plan.' },
                 { q: 'How fast is the first delivery?', a: 'First content batch within 24-48 hours of your onboarding questionnaire.' },
-                { q: 'Do you work with chess clubs?', a: 'Yes — our Chess Club tier is purpose-built for clubs using chess-club-hub, with newsletter and tournament content included.' },
+                { q: 'Do you work with chess clubs?', a: 'Yes — our Chess Club tier is purpose-built for clubs. Learn more on our dedicated chess club page at /chess-clubs.' },
                 { q: 'Who writes the content?', a: 'Nivaan (Chess National Master) leads all content strategy and quality control. AI tools handle the draft; we ensure everything sounds authentically human.' },
               ].map(({ q, a }) => (
                 <div key={q} className="bg-white border border-rule rounded-xl p-6">

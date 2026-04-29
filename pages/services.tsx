@@ -68,22 +68,21 @@ export default function Services() {
       <section className="bg-ink py-20 px-[6%]">
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row gap-10 items-start">
           <div className="flex-1">
-            <p className="text-[0.72rem] font-medium uppercase tracking-widest text-teal-mid mb-3">chess-club-hub integration</p>
+            <p className="text-[0.72rem] font-medium uppercase tracking-widest text-teal-mid mb-3">Chess clubs</p>
             <h2 className="font-serif text-[clamp(1.6rem,3vw,2.4rem)] text-white tracking-tight max-w-xl">
               Chess clubs get a native content pipeline.
             </h2>
             <p className="text-white/55 mt-4 leading-relaxed max-w-lg">
-              Our Chess Club Content tier connects directly with chess-club-hub. Every game result,
-              tournament, and player milestone becomes a newsletter, recap, or social post — automatically.
+              Our Chess Club Content tier helps clubs turn games, tournaments, and player milestones into newsletters, recaps, and social posts automatically.
             </p>
-            <Link href="/integration" className="inline-block mt-6 text-teal-mid text-[0.9rem] font-medium hover:text-white transition-colors">
+            <Link href="/chess-clubs" className="inline-block mt-6 text-teal-mid text-[0.9rem] font-medium hover:text-white transition-colors">
               See all 6 integration points →
             </Link>
           </div>
           <div className="sm:w-64 bg-white/5 border border-white/10 rounded-xl p-6 flex-shrink-0">
             <div className="text-white/40 text-[0.85rem] mb-4">Chess Club Content</div>
             <ul className="flex flex-col gap-2">
-              {['Monthly club newsletter', '4 tournament recap posts', 'chess-club-hub integration', 'Player spotlight content', 'Cancel anytime'].map(f => (
+              {['Monthly club newsletter', '4 tournament recap posts', 'Native club content workflow', 'Player spotlight content', 'Cancel anytime'].map(f => (
                 <li key={f} className="flex gap-2 items-start text-[0.83rem] text-white/60">
                   <span className="w-4 h-4 rounded-full bg-teal/30 text-teal-mid flex items-center justify-center text-[0.6rem] font-bold mt-0.5 flex-shrink-0">✓</span>
                   {f}

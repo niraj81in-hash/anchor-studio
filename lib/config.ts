@@ -10,9 +10,9 @@ export const SITE = {
 } as const;
 
 export const FOUNDER = {
-  name:    'Nivaan:',
+  name:    'Nivaan Shrivastava',
   title:   'Chess National Master',
-  grade:   '8th grade, Metuchen NJ',
+  grade:   '',
   bio:     'Nivaan founded Anchor Studio to give growing businesses the strategic content they need without the overhead of a full agency. A Chess National Master, he brings the same systems thinking and pattern recognition from competitive chess to content strategy — planning three moves ahead so your brand stays visible and consistent. He built Anchor Studio on AI-accelerated workflows that let him deliver agency-quality work at freelancer speed.',
   chips: [
     '♛ Chess National Master',
@@ -24,7 +24,7 @@ export const FOUNDER = {
 
 export const SERVICES: Service[] = [
   { name: 'Content Package',          icon: '✍️', description: '4 blog posts + 12 social captions/month, written in your brand voice.' },
-  { name: 'Chess Club Content',       icon: '♟',  description: 'Newsletters, tournament recaps, player spotlights — built for clubs using chess-club-hub.' },
+  { name: 'Chess Club Content',       icon: '♟',  description: 'Newsletters, tournament recaps, player spotlights — built for chess clubs and academies.' },
   { name: 'SEO Blog Retainer',        icon: '📈', description: '8 keyword-optimised posts per month to rank on Google and drive organic leads.' },
   { name: 'Email Sequence Buildout',  icon: '📧', description: 'Welcome, nurture, and sales sequences — written once, working forever.' },
   { name: 'AI Chatbot Setup',         icon: '🤖', description: 'Claude-powered chatbot that qualifies leads and answers client questions 24/7.' },
@@ -38,7 +38,7 @@ export const PRICING: PricingPlan[] = [
     features: [
       'Monthly club newsletter',
       '4 tournament recap posts',
-      'chess-club-hub integration',
+      'Content calendar & scheduling',
       'Player spotlight content',
       'Cancel anytime',
     ],
@@ -61,7 +61,7 @@ export const PRICING: PricingPlan[] = [
       'Everything in Growth',
       'AI chatbot for your site',
       'Email sequence buildout',
-      'chess-club-hub API integration',
+      'Custom platform integrations',
       'Same-day turnaround',
     ],
   },
