@@ -6,13 +6,13 @@ export const SITE = {
   heroTagline: 'Content strategy is just chess for your brand.',
   domain:      'https://www.getanchorstudio.com',
   email:       'hello@getanchorstudio.com',
-  calendly:    process.env.NEXT_PUBLIC_CALENDLY_URL ?? 'https://calendly.com',
+  calendly:    process.env.NEXT_PUBLIC_CALENDLY_URL ?? 'https://calendly.com/nirajshriva',
 } as const;
 
 export const FOUNDER = {
-  name:    'Nivaan Shrivastava',
+  name:    'Nivaan:',
   title:   'Chess National Master',
-  grade:   '',
+  grade:   '8th grade, Metuchen NJ',
   bio:     'Nivaan founded Anchor Studio to give growing businesses the strategic content they need without the overhead of a full agency. A Chess National Master, he brings the same systems thinking and pattern recognition from competitive chess to content strategy — planning three moves ahead so your brand stays visible and consistent. He built Anchor Studio on AI-accelerated workflows that let him deliver agency-quality work at freelancer speed.',
   chips: [
     '♛ Chess National Master',
