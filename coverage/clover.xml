@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1777437675206" clover="3.2.0">
-  <project timestamp="1777437675206" name="All files">
+<coverage generated="1777441438874" clover="3.2.0">
+  <project timestamp="1777441438874" name="All files">
     <metrics statements="246" coveredstatements="57" conditionals="170" coveredconditionals="21" methods="57" coveredmethods="11" elements="473" coveredelements="89" complexity="0" loc="246" ncloc="246" packages="3" files="11" classes="11"/>
     <package name="components">
       <metrics statements="90" coveredstatements="9" conditionals="60" coveredconditionals="4" methods="32" coveredmethods="4"/>
@@ -163,11 +163,11 @@
         <metrics statements="7" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="3" count="0" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="35" count="0" type="stmt"/>
-        <line num="71" count="0" type="stmt"/>
-        <line num="80" count="0" type="stmt"/>
-        <line num="87" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="79" count="0" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
       </file>
       <file name="security.ts" path="/Users/nirajshrivastava/Documents/anchor-studio/lib/security.ts">
         <metrics statements="36" coveredstatements="22" conditionals="18" coveredconditionals="6" methods="7" coveredmethods="3"/>

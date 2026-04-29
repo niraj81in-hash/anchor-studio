@@ -23,7 +23,7 @@ export default function Footer() {
         </a>
       </div>
       <p className="text-[0.72rem] text-white/30 w-full sm:w-auto">
-        © {new Date().getFullYear()} Anchor Studio · Founded by Nivaan, Chess National Master · Metuchen, NJ
+        © {new Date().getFullYear()} Anchor Studio · Founded by Nivaan in Metuchen, NJ
       </p>
     </footer>
   );

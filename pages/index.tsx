@@ -22,10 +22,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Anchor Studio — AI Content by a Chess National Master</title>
-        <meta name="description" content="Anchor Studio is founded by Nivaan, a Chess National Master. AI-powered content for chess clubs, tutoring centres, and growing businesses." />
-        <meta property="og:title" content="Anchor Studio — AI Content by a Chess National Master" />
-        <meta property="og:description" content="Content strategy is just chess for your brand. Founded by Nivaan, Chess National Master." />
+        <title>Anchor Studio — Done-for-You Content for Growing Businesses</title>
+        <meta name="description" content="Agency-quality blog posts, social content, and email sequences — delivered in days, not weeks, at a fraction of agency pricing." />
+        <meta property="og:title" content="Anchor Studio — Done-for-You Content for Growing Businesses" />
+        <meta property="og:description" content="Your content team — without the team. AI-accelerated content for growing businesses." />
         <meta property="og:url" content={SITE.domain} />
       </Head>
 
@@ -37,18 +37,13 @@ export default function Home() {
         <div className="absolute right-[-10%] top-[15%] w-[580px] h-[580px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(13,127,106,0.22) 0%, transparent 70%)' }} />
 
         <div className="relative z-10 max-w-3xl">
-          <div className="inline-flex items-center gap-2 bg-[rgba(201,168,76,0.12)] border border-[rgba(201,168,76,0.3)] rounded-full px-4 py-1.5 text-[0.73rem] font-medium text-[#C9A84C] tracking-widest uppercase mb-7">
-            <span>♛</span> Founded by a Chess National Master
-          </div>
-
           <h1 className="font-serif text-[clamp(2.6rem,5.5vw,5rem)] leading-[1.06] text-white tracking-tight">
-            Content strategy<br />
-            is just chess<br />
-            <em className="text-teal-mid not-italic">for your brand.</em>
+            Your content team —<br />
+            <em className="text-teal-mid not-italic">without the team.</em>
           </h1>
 
           <p className="text-[1.05rem] text-white/60 max-w-lg mt-5 leading-relaxed">
-            Anchor Studio is founded by Nivaan — Chess National Master. AI-powered content for businesses that want to grow without hiring a full agency.
+            Agency-quality blog posts, social content, and email sequences — delivered in days, not weeks, at a fraction of agency pricing.
           </p>
 
           <div className="flex flex-wrap gap-4 mt-8">
@@ -65,10 +60,10 @@ export default function Home() {
           {/* Stats */}
           <div className="flex flex-wrap gap-10 mt-14 pt-10 border-t border-white/10">
             {[
-              { n: 'National Master',  l: 'Chess title'         },
-              { n: 'Elite',     l: 'Math competition honors'   },
-              { n: '24hr',   l: 'Content turnaround'   },
-              { n: '3×',     l: 'Lower than agencies'  },
+              { n: '100+',    l: 'Pieces delivered'    },
+              { n: '<15min',  l: 'Monthly time on your end' },
+              { n: '24hr',    l: 'Content turnaround'   },
+              { n: '3×',      l: 'Lower than agencies'  },
             ].map(({ n, l }) => (
               <div key={l}>
                 <div className="font-serif text-[2rem] text-white leading-none">{n}</div>
@@ -87,7 +82,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="reveal">
             <p className="text-[0.72rem] font-medium uppercase tracking-widest text-teal mb-2">What we deliver</p>
-            <h2 className="font-serif text-[clamp(1.9rem,3vw,2.8rem)] text-ink tracking-tight">Five done-for-you services.</h2>
+            <h2 className="font-serif text-[clamp(1.9rem,3vw,2.8rem)] text-ink tracking-tight">Six done-for-you services.</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-rule border border-rule rounded-xl overflow-hidden mt-10 reveal" style={{ transitionDelay: '0.1s' }}>
             {SERVICES.map(s => (
@@ -108,8 +103,8 @@ export default function Home() {
       {/* ── CHESS HUB PREVIEW ─────────────────────────────────────── */}
       <section className="bg-ink py-20 px-[6%]">
         <div className="max-w-5xl mx-auto reveal">
-          <p className="text-[0.72rem] font-medium uppercase tracking-widest text-teal-mid mb-2">chess-club-hub integration</p>
-          <h2 className="font-serif text-[clamp(1.9rem,3vw,2.6rem)] text-white tracking-tight max-w-xl">Content that lives inside your chess platform.</h2>
+          <p className="text-[0.72rem] font-medium uppercase tracking-widest text-teal-mid mb-2">Bonus: chess-club-hub integration</p>
+          <h2 className="font-serif text-[clamp(1.9rem,3vw,2.6rem)] text-white tracking-tight max-w-xl">Run a chess club? We also offer native integration with chess-club-hub.</h2>
           <p className="text-white/55 mt-4 max-w-lg leading-relaxed">Anchor Studio connects directly with chess-club-hub — every game, tournament, and player milestone becomes content automatically.</p>
           <Link href="/integration" className="inline-block mt-6 text-teal-mid text-[0.9rem] font-medium hover:text-white transition-colors">
             See all 6 integration points →
@@ -117,7 +112,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── HOW IT WORKS ──────────────────────────────────────────── */}
+      {/* ── PRICING ───────────────────────────────────────────────── */}
       <section className="bg-white py-20 px-[6%]" id="how">
         <div className="max-w-5xl mx-auto">
           <div className="reveal">
@@ -168,6 +163,27 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── TESTIMONIALS ──────────────────────────────────────────── */}
+      <section className="bg-white py-20 px-[6%]">
+        <div className="max-w-5xl mx-auto">
+          <div className="reveal">
+            <h2 className="font-serif text-[clamp(1.9rem,3vw,2.8rem)] text-ink tracking-tight text-center">What clients say</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10 reveal" style={{ transitionDelay: '0.1s' }}>
+            {[
+              { quote: '[Client testimonial coming soon]', author: 'J.S., Financial Advisor' },
+              { quote: '[Client testimonial coming soon]', author: 'M.R., Chess Academy Director' },
+              { quote: '[Client testimonial coming soon]', author: 'K.L., Local Business Owner' },
+            ].map((testimonial, i) => (
+              <div key={i} className="bg-warm border border-rule rounded-xl p-6 text-center">
+                <div className="text-[1.1rem] text-ink italic mb-4">&ldquo;{testimonial.quote}&rdquo;</div>
+                <div className="text-[0.85rem] text-mid">&mdash; {testimonial.author}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── NICHES ────────────────────────────────────────────────── */}
       <section className="bg-white py-20 px-[6%]">
         <div className="max-w-5xl mx-auto">
@@ -192,7 +208,7 @@ export default function Home() {
           <div className="reveal">
             <p className="text-[0.72rem] font-medium uppercase tracking-widest text-teal mb-2">Pricing</p>
             <h2 className="font-serif text-[clamp(1.9rem,3vw,2.8rem)] text-ink tracking-tight">Simple packages. No surprises.</h2>
-            <p className="text-mid mt-3">All plans include a 30-day cancellation guarantee.</p>
+            <p className="text-mid mt-3">Every business is different — hop on a free 30-minute call and we&apos;ll build a plan that fits your budget.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-10 reveal" style={{ transitionDelay: '0.1s' }}>
             {PRICING.map(plan => (
