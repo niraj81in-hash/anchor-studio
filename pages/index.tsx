@@ -5,7 +5,7 @@ import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import FounderStrip from '@/components/FounderStrip';
 import ChatBot from '@/components/ChatBot';
-import { SITE, SERVICES, PRICING, HOW_IT_WORKS, PORTFOLIO_SAMPLES, POSITIONING, NICHES } from '@/lib/config';
+import { SITE, SERVICES, PRICING, HOW_IT_WORKS, PORTFOLIO_SAMPLES, POSITIONING, NICHES, THE_PROBLEM } from '@/lib/config';
 
 export default function Home() {
   const revealRefs = useRef<HTMLElement[]>([]);
@@ -38,12 +38,12 @@ export default function Home() {
 
         <div className="relative z-10 max-w-3xl">
           <h1 className="font-serif text-[clamp(2.6rem,5.5vw,5rem)] leading-[1.06] text-white tracking-tight">
-            I&apos;ll build your content engine —<br />
-            <em className="text-teal-mid not-italic">so you can run your business.</em>
+            Content strategy for chess —<br />
+            <em className="text-teal-mid not-italic">by someone who actually plays.</em>
           </h1>
 
           <p className="text-[1.05rem] text-white/60 max-w-lg mt-5 leading-relaxed">
-            I&apos;m Nivaan — I create blog posts, newsletters, social content, and email sequences for small businesses and chess clubs. Agency-quality work, solo-operator speed, founding-client pricing.
+            I&apos;m Nivaan, a Chess National Master building content systems for chess organizations and education businesses. Done-for-you newsletters, tournament recaps, and enrollment content — powered by chess thinking and AI acceleration.
           </p>
 
           <div className="flex flex-wrap gap-4 mt-8">
@@ -57,12 +57,12 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Commitments */}
+          {/* Credibility strip */}
           <div className="flex flex-wrap gap-10 mt-14 pt-10 border-t border-white/10">
             {[
-              { n: '72hrs',    l: 'First batch delivered'    },
+              { n: '72hrs',    l: 'First delivery'    },
               { n: '15min',  l: 'Monthly time on your end' },
-              { n: 'Cancel',    l: 'After month one if not working' },
+              { n: 'National Master',    l: 'USCF rated' },
             ].map(({ n, l }) => (
               <div key={l}>
                 <div className="font-serif text-[2rem] text-white leading-none">{n}</div>
@@ -73,15 +73,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── FOUNDER STRIP ─────────────────────────────────────────── */}
-      <FounderStrip />
+      {/* ── THE PROBLEM ───────────────────────────────────────────── */}
+      <section className="bg-white py-20 px-[6%]">
+        <div className="max-w-4xl mx-auto text-center reveal">
+          <h2 className="font-serif text-[clamp(1.9rem,3vw,2.8rem)] text-ink tracking-tight mb-6">
+            You&apos;re great at teaching chess.<br />
+            <em className="text-teal-mid not-italic">Content falls through the cracks.</em>
+          </h2>
+          <p className="text-[1.1rem] text-mid leading-relaxed mb-10 max-w-3xl mx-auto">
+            {THE_PROBLEM.description}
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+            {THE_PROBLEM.painPoints.map((point, i) => (
+              <div key={i} className="text-left p-4 bg-warm rounded-lg border border-rule">
+                <div className="text-[0.9rem] text-ink">{point}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ── SERVICES ──────────────────────────────────────────────── */}
       <section className="bg-warm py-20 px-[6%]" id="services">
         <div className="max-w-5xl mx-auto">
           <div className="reveal">
             <p className="text-[0.72rem] font-medium uppercase tracking-widest text-teal mb-2">What I deliver</p>
-            <h2 className="font-serif text-[clamp(1.9rem,3vw,2.8rem)] text-ink tracking-tight">Four done-for-you services.</h2>
+            <h2 className="font-serif text-[clamp(1.9rem,3vw,2.8rem)] text-ink tracking-tight">Three done-for-you services.</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-rule border border-rule rounded-xl overflow-hidden mt-10 reveal" style={{ transitionDelay: '0.1s' }}>
             {SERVICES.map(s => (
@@ -99,12 +116,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── PRICING ───────────────────────────────────────────────── */}
+      {/* ── HOW IT WORKS ──────────────────────────────────────────── */}
       <section className="bg-white py-20 px-[6%]" id="how">
         <div className="max-w-5xl mx-auto">
           <div className="reveal">
-            <p className="text-[0.72rem] font-medium uppercase tracking-widest text-teal mb-2">The process</p>
-            <h2 className="font-serif text-[clamp(1.9rem,3vw,2.8rem)] text-ink tracking-tight">From brief to published in 1–3 days.</h2>
+            <p className="text-[0.72rem] font-medium uppercase tracking-widest text-teal mb-2">How it works</p>
+            <h2 className="font-serif text-[clamp(1.9rem,3vw,2.8rem)] text-ink tracking-tight">From brief to published in 72 hours.</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
             {HOW_IT_WORKS.map((step, i) => (
@@ -140,12 +157,45 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── ABOUT / FOUNDER ───────────────────────────────────────── */}
+      <section className="bg-warm py-20 px-[6%]">
+        <div className="max-w-4xl mx-auto">
+          <div className="reveal text-center mb-12">
+            <div className="text-6xl mb-6">♛</div>
+            <h2 className="font-serif text-[clamp(1.9rem,3vw,2.8rem)] text-ink tracking-tight mb-6">
+              Why a National Master builds content systems
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+            <div className="lg:col-span-2 reveal">
+              <p className="text-[1.05rem] text-ink leading-relaxed mb-6">
+                As a Chess National Master, I think in systems and sequences — it&apos;s how my brain works from competitive chess, and it&apos;s how I approach your content calendar.
+              </p>
+              <p className="text-[1.05rem] text-mid leading-relaxed mb-6">
+                I started Anchor Studio because I saw chess organizations struggling with content that actually reaches parents and builds community. You&apos;re great at teaching chess, but newsletters get delayed, tournament recaps never get written, and social media sits silent.
+              </p>
+              <p className="text-[1.05rem] text-mid leading-relaxed">
+                I use AI-accelerated workflows that let me deliver agency-quality work at solo-operator speed. Founding clients get my lowest rates, locked in permanently, and direct access to me for everything.
+              </p>
+            </div>
+            <div className="reveal" style={{ transitionDelay: '0.2s' }}>
+              <div className="bg-white border border-rule rounded-xl p-6 text-center">
+                <div className="text-3xl mb-3">♛</div>
+                <div className="font-medium text-ink mb-2">Nivaan</div>
+                <div className="text-[0.9rem] text-mid">Chess National Master</div>
+                <div className="text-[0.9rem] text-mid">Metuchen, NJ</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── PORTFOLIO / SAMPLE WORK ───────────────────────────────── */}
       <section className="bg-white py-20 px-[6%]" id="portfolio">
         <div className="max-w-5xl mx-auto">
           <div className="reveal">
-            <p className="text-[0.72rem] font-medium uppercase tracking-widest text-teal mb-2">See the work</p>
-            <h2 className="font-serif text-[clamp(1.9rem,3vw,2.8rem)] text-ink tracking-tight text-center">Sample content I&apos;ve created.</h2>
+            <p className="text-[0.72rem] font-medium uppercase tracking-widest text-teal mb-2">Sample work</p>
+            <h2 className="font-serif text-[clamp(1.9rem,3vw,2.8rem)] text-ink tracking-tight text-center">Content I&apos;ve created for chess and education clients.</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
             {PORTFOLIO_SAMPLES.map((sample, i) => (
