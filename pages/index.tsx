@@ -205,9 +205,9 @@ export default function Home() {
                 </div>
                 <div className="font-medium text-[0.95rem] text-ink mb-3">{sample.title}</div>
                 <div className="text-[0.85rem] text-mid leading-relaxed mb-4">{sample.excerpt}</div>
-                <button className="text-teal text-[0.9rem] font-medium hover:text-teal-dark transition-colors">
+                <Link href={`/samples/${sample.slug}`} className="text-teal text-[0.9rem] font-medium hover:text-teal-dark transition-colors">
                   Read full sample →
-                </button>
+                </Link>
               </div>
             ))}
           </div>

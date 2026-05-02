@@ -67,11 +67,18 @@ export interface PricingPlan {
   chessHub?: boolean;
 }
 
+export interface PortfolioSampleSection {
+  heading?: string;
+  body: string;
+}
+
 export interface PortfolioSample {
   title: string;
   type: string;
   excerpt: string;
   content: string;
+  slug: string;
+  sections: PortfolioSampleSection[];
 }
 
 export interface PositioningFeature {
