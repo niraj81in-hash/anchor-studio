@@ -31,7 +31,6 @@ export const SERVICES: Service[] = [
 export const PRICING: PricingPlan[] = [
   {
     name: 'Chess',
-    price: '$400/mo',
     features: [
       'Monthly club newsletter',
       '4 tournament recap posts',
@@ -42,7 +41,6 @@ export const PRICING: PricingPlan[] = [
   },
   {
     name: 'Growth',
-    price: '$900/mo',
     popular: true,
     features: [
       '8 SEO blog posts/month',
