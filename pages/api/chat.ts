@@ -30,7 +30,7 @@ export default async function handler(
 
   // Rate limiting
   const clientKey = getRateLimitKey(req);
-  if (!checkRateLimit(clientKey)) {
+  if (!(await checkRateLimit(clientKey))) {
     res.setHeader('Retry-After', '60');
     return res.status(429).json({ reply: '', error: 'Too many requests. Please try again later.' });
   }

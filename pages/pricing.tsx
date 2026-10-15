@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import ChatBot from '@/components/ChatBot';
-import { SITE, PRICING, COMPARE_ROWS } from '@/lib/config';
+import { SITE } from '@/lib/config';
 
 export default function Pricing() {
   return (

@@ -1,4 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { timingSafeEqual } from 'crypto';
 import {
   generateNewsletter,
   annotateGame,
@@ -19,6 +20,14 @@ import {
 // API key for chess-club-hub integration (stored as env var)
 const GENERATE_API_KEY = process.env.GENERATE_API_KEY;
 
+// Constant-time comparison to avoid leaking the key via timing.
+function keysMatch(provided: string, expected: string): boolean {
+  const a = Buffer.from(provided);
+  const b = Buffer.from(expected);
+  if (a.length !== b.length) return false;
+  return timingSafeEqual(a, b);
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<GenerateResponse>,
@@ -38,15 +47,21 @@ export default async function handler(
 
   // Rate limiting
   const clientKey = getRateLimitKey(req);
-  if (!checkRateLimit(clientKey)) {
+  if (!(await checkRateLimit(clientKey))) {
     res.setHeader('Retry-After', '60');
     return res.status(429).json({ content: '', type: 'newsletter', error: 'Too many requests. Please try again later.' });
   }
 
-  // Authenticate with API key
+  // Authenticate with API key — fail closed. A missing GENERATE_API_KEY is a
+  // server misconfiguration, not an invitation to serve unauthenticated (and
+  // billable) content generation to the public.
+  if (!GENERATE_API_KEY) {
+    console.error('GENERATE_API_KEY is not set — rejecting all /api/generate requests');
+    return res.status(500).json({ content: '', type: 'newsletter', error: 'Server configuration error' });
+  }
   const authHeader = req.headers['authorization'];
-  const providedKey = authHeader?.replace('Bearer ', '');
-  if (GENERATE_API_KEY && providedKey !== GENERATE_API_KEY) {
+  const providedKey = authHeader?.replace('Bearer ', '') ?? '';
+  if (!keysMatch(providedKey, GENERATE_API_KEY)) {
     return res.status(401).json({ content: '', type: 'newsletter', error: 'Unauthorized' });
   }
 

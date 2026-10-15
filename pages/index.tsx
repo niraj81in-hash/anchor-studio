@@ -252,6 +252,7 @@ export default function Home() {
                 {plan.price && (
                   <div className={`text-[2rem] font-serif font-medium mb-5 ${plan.popular ? 'text-white' : 'text-ink'}`}>{plan.price}</div>
                 )}
+                <div className={`text-[0.9rem] mb-5 ${plan.popular ? 'text-white/70' : 'text-mid'}`}>Founding-client rate — <span className={plan.popular ? 'text-white' : 'text-ink'}>book a call for your quote</span>.</div>
                 <hr className={`border-t mb-5 ${plan.popular ? 'border-white/12' : 'border-rule'}`} />
                 <ul className="flex flex-col gap-2 flex-1 mb-6">
                   {plan.features.map(f => (
@@ -263,7 +264,7 @@ export default function Home() {
                 </ul>
                 <a href={SITE.calendly} target="_blank" rel="noopener noreferrer"
                    className={`block text-center py-2.5 rounded-lg text-[0.88rem] font-medium transition-colors ${plan.popular ? 'bg-teal text-white hover:bg-teal-dark' : 'border border-rule text-ink hover:bg-ink hover:text-white hover:border-ink'}`}>
-                  Lock in this rate →
+                  Get founding-client pricing →
                 </a>
               </div>
             ))}
