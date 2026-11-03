@@ -23,9 +23,9 @@ export const FOUNDER = {
 } as const;
 
 export const SERVICES: Service[] = [
-  { name: 'Chess Club & Academy Content', icon: '♟',  description: 'Newsletters, tournament recaps, player spotlights, coaching content. Built by a National Master who doesn\'t need you to explain what a Swiss-system is.' },
-  { name: 'SEO & Blog Content',           icon: '📈', description: 'Keyword-optimized posts to drive enrollment and discovery. Rank for "[city] chess lessons" or "[city] tutoring" and attract new families.' },
-  { name: 'Email Sequences',              icon: '📧', description: 'Welcome, nurture, and re-enrollment sequences. Written once, working forever to convert prospects and retain students.' },
+  { name: 'Chess Club & Academy Content', icon: 'board', description: 'Newsletters, tournament recaps, player spotlights, coaching content. Built by a National Master who doesn\'t need you to explain what a Swiss-system is.' },
+  { name: 'SEO & Blog Content',           icon: 'chart', description: 'Keyword-optimized posts to drive enrollment and discovery. Rank for "[city] chess lessons" or "[city] tutoring" and attract new families.' },
+  { name: 'Email Sequences',              icon: 'mail',  description: 'Welcome, nurture, and re-enrollment sequences. Written once, working forever to convert prospects and retain students.' },
 ];
 
 export const PRICING: PricingPlan[] = [
@@ -241,9 +241,9 @@ export const THE_PROBLEM = {
 export const POSITIONING = {
   paragraph: 'You could hire an agency for $5,000/month and wait two weeks for deliverables. You could try to do it yourself with ChatGPT and spend hours prompt-engineering mediocre posts. Or you could work directly with me — agency-level strategy, AI-powered speed, and a founding-client price that makes sense for a small business.',
   features: [
-    { icon: '👤', title: 'Direct access', description: 'You work with me, not a junior copywriter' },
-    { icon: '🤖', title: 'AI-accelerated', description: 'Research and first drafts are AI-powered; strategy and voice are human' },
-    { icon: '🛡️', title: 'Risk-free start', description: 'Cancel after month one, no questions asked' },
+    { icon: 'user', title: 'Direct access', description: 'You work with me, not a junior copywriter' },
+    { icon: 'spark', title: 'AI-accelerated', description: 'Research and first drafts are AI-powered; strategy and voice are human' },
+    { icon: 'shield', title: 'Risk-free start', description: 'Cancel after month one, no questions asked' },
   ],
 } as const;
 

@@ -25,6 +25,24 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ── Visible keyboard focus (teal ring reads on both ink and light) ─ */
+:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Respect reduced-motion preferences ─────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
 body {
   font-family: 'DM Sans', system-ui, sans-serif;
   color: var(--ink);
