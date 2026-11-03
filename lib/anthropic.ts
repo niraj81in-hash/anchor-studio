@@ -11,11 +11,11 @@ export const MODELS = {
   // Fast + cheap — chatbot, FAQ, simple content
   haiku:  'claude-haiku-4-5-20251001',
   // Best quality — complex content, strategy, long-form
-  sonnet: 'claude-sonnet-4-6',
+  sonnet: 'claude-sonnet-5',
 } as const;
 
 // ── Anchor Studio system prompt ──────────────────────────────────────
-export const ANCHOR_STUDIO_SYSTEM = `You are Nivaan's AI assistant for Anchor Studio — a founder-led content studio built specifically for chess organizations, and for education businesses that grow on community trust. Founded and run by Nivaan, a Chess National Master from Metuchen, NJ.
+export const ANCHOR_STUDIO_SYSTEM = `You are Nivaan's AI assistant for Anchor Studio — a founder-led content studio built specifically for chess organizations, and for education businesses that grow on community trust. Founded and run by Nivaan, a Chess National Master from Edison, NJ.
 
 About Anchor Studio:
 - A solo, founder-led studio — clients work directly with me, not a junior copywriter or an account manager.

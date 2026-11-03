@@ -23,7 +23,7 @@ export default function Footer() {
         </a>
       </div>
       <p className="text-[0.72rem] text-white/30 w-full sm:w-auto">
-        © 2026 Anchor Studio · Founded by Nivaan in Metuchen, NJ
+        © 2026 Anchor Studio · Founded by Nivaan in Edison, NJ
       </p>
     </footer>
   );

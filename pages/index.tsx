@@ -22,10 +22,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Anchor Studio — Done-for-You Content for Growing Businesses</title>
-        <meta name="description" content="Agency-quality blog posts, social content, and email sequences — delivered in days, not weeks, at a fraction of agency pricing." />
-        <meta property="og:title" content="Anchor Studio — Done-for-You Content for Growing Businesses" />
-        <meta property="og:description" content="Your content team — without the team. AI-accelerated content for growing businesses." />
+        <title>Anchor Studio — Content Strategy for Chess Organizations</title>
+        <meta name="description" content="Done-for-you newsletters, tournament recaps, and enrollment content for chess clubs, academies, and education businesses — by a Chess National Master. Featured in US Chess." />
+        <meta property="og:title" content="Anchor Studio — Content Strategy for Chess Organizations" />
+        <meta property="og:description" content="Newsletters, tournament recaps, and enrollment content built for chess organizations — by a National Master, featured in US Chess." />
         <meta property="og:url" content={SITE.domain} />
       </Head>
 
@@ -183,7 +183,7 @@ export default function Home() {
                 <div className="text-3xl mb-3">♛</div>
                 <div className="font-medium text-ink mb-2">Nivaan</div>
                 <div className="text-[0.9rem] text-mid">Chess National Master</div>
-                <div className="text-[0.9rem] text-mid">Metuchen, NJ</div>
+                <div className="text-[0.9rem] text-mid">Edison, NJ</div>
               </div>
             </div>
           </div>

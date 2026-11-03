@@ -125,7 +125,7 @@ const response = await fetch('https://www.getanchorstudio.com/api/generate', {
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
     type: 'newsletter',
-    club: 'Metuchen Chess Club',
+    club: 'Edison Chess Club',
     data: { games, players, totalGames },
   }),
 });
@@ -170,4 +170,4 @@ Change services, pricing, or niches there and the entire site updates automatica
 
 hello@getanchorstudio.com · [getanchorstudio.com](https://www.getanchorstudio.com)
 
-© 2026 Anchor Studio · Founded by Nivaan, Chess National Master · Metuchen, NJ
+© 2026 Anchor Studio · Founded by Nivaan, Chess National Master · Edison, NJ
