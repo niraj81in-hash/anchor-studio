@@ -11,15 +11,15 @@ const SUGGESTIONS = [
 ];
 
 const DEMO_RESPONSES: Record<string, string> = {
-  price:    "Pricing depends on your needs — I'd love to set up a quick call to walk you through options. Want me to share our booking link?",
-  cost:     "Pricing depends on your needs — I'd love to set up a quick call to walk you through options. Want me to share our booking link?",
-  much:     "Pricing depends on your needs — I'd love to set up a quick call to walk you through options. Want me to share our booking link?",
-  fast:     "We deliver first drafts within 24-48 hours — compared to 1-2 weeks at traditional agencies. AI-powered workflow is what makes that possible.",
-  deliver:  "We deliver first drafts within 24-48 hours — compared to 1-2 weeks at traditional agencies. AI-powered workflow is what makes that possible.",
-  book:     "You can book a free 30-minute discovery call at your convenience — no pitch, just a clear plan. Email us at hello@getanchorstudio.com to get started.",
-  call:     "You can book a free 30-minute discovery call at your convenience — no pitch, just a clear plan. Email us at hello@getanchorstudio.com to get started.",
-  chess:    "Chess clubs are our best-fit niche — and for good reason. Anchor Studio was founded by Nivaan, a Chess National Master. We handle newsletters, tournament recaps, game annotations, and social posts, all integrated with chess-club-hub.",
-  offer:    "We produce AI-powered blogs, social captions, email sequences, and chatbots for businesses. Our chess club content tier is unique — powered by a National Master founder. What type of business are you running?",
+  price:    "Pricing is tailored to each client, and founding-client rates are available for early clients. The best next step is a quick free call for a custom quote — want the booking link?",
+  cost:     "Pricing is tailored to each client, and founding-client rates are available for early clients. The best next step is a quick free call for a custom quote — want the booking link?",
+  much:     "Pricing is tailored to each client, and founding-client rates are available for early clients. The best next step is a quick free call for a custom quote — want the booking link?",
+  fast:     "Your first content batch lands within 72 hours of our kickoff — then it's consistent content every month with just one quick round of edits on your end.",
+  deliver:  "Your first content batch lands within 72 hours of our kickoff — then it's consistent content every month with just one quick round of edits on your end.",
+  book:     "You can book a free 30-minute discovery call — no pitch, just a clear plan. Grab a time via the booking link, or email hello@getanchorstudio.com.",
+  call:     "You can book a free 30-minute discovery call — no pitch, just a clear plan. Grab a time via the booking link, or email hello@getanchorstudio.com.",
+  chess:    "Chess organizations are exactly who Anchor Studio is built for — it's run by Nivaan, a Chess National Master. I handle newsletters, tournament recaps, player spotlights, and coaching content, written by someone who actually plays.",
+  offer:    "I create done-for-you content for chess organizations and education businesses: chess club & academy content, SEO blog posts, and email sequences. What kind of organization are you with?",
 };
 
 function getDemoResponse(text: string): string {
@@ -27,7 +27,7 @@ function getDemoResponse(text: string): string {
   for (const [key, response] of Object.entries(DEMO_RESPONSES)) {
     if (t.includes(key)) return response;
   }
-  return "Great question! We use AI to produce professional content 3× faster and at a fraction of agency cost. What would you like to know more about — our services, pricing, or chess club content?";
+  return "Great question! I'm a founder-led studio creating done-for-you content for chess organizations and education businesses. Want to hear about services, turnaround, or booking a free call?";
 }
 
 export default function ChatBot() {
