@@ -63,3 +63,38 @@ Visual system is strong — ink/teal/warm palette, fluid serif display type (`cl
 4. Fix generic `<title>`/OG tags; add `public/` with robots, sitemap, favicon, OG image _(SEO you sell)_
 5. `.gitignore` coverage/, update `CLAUDE.md`, bump Sonnet 4.6 → Sonnet 5
 6. Design polish: credibility strip, icon consistency, section separation
+
+> **Status (2026-11-03):** all six items above — plus the US Chess credibility work, Vercel Web Analytics, the Edison location fix, and the broken-Calendly-link fix — are shipped and live in production (PRs #1–#6).
+
+---
+
+# Production Review — 2026-11-03
+
+_Reviewed the live production site end-to-end (every route, headers, redirects, meta, API, rendered UI) after PRs #1–#6 shipped. Perspectives: entrepreneur, senior engineer._
+
+**Working well:** distinctive chess-first design; real US Chess credibility (feature + annotated sample + editor testimonial); working CTA → Calendly (`getanchorstudio`); live Claude chatbot; cookieless Vercel analytics; SEO basics (chess-first title/OG, og-image, robots, sitemap, favicon); HTTPS + HSTS; apex → www redirect; accessibility floor (focus-visible, reduced-motion).
+
+## 🧑‍💼 Entrepreneur
+
+1. **Only one, high-friction conversion path.** Everything funnels to "Book a call". Add a low-friction **email capture / lead magnet** (e.g. a chess-club newsletter template or 90-day content calendar) to capture the majority who aren't ready to book. _Biggest funnel gap._
+2. **The content agency publishes no content.** Sells SEO/blogging but has no blog — credibility + ranking miss. Publish a few real posts (annotated games, "how a chess club runs its newsletter").
+3. **Portfolio is mostly fictional.** 1 real sample (Girsh–Gao) vs 3 invented ("Westfield Chess Academy", "Brightpath Tutoring" w/ fake contact info). Replace mocks with real work; keep the US Chess piece leading.
+4. **Thin social proof** — one editorial testimonial, zero client testimonials/case studies/metrics. Land 1–2 pilot clients → case study with a number. _#1 conversion lever for a new agency._
+5. **Positioning slightly split** — "chess + education". Lead ~90% chess (the real edge); education secondary.
+6. **Risk reversal** is good; consider a stronger first-order guarantee (first deliverable free / money-back).
+
+## 🛠️ Senior engineer
+
+1. **🔴 Security headers missing on HTML pages.** Only HSTS present (Vercel-added). `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, CSP are set on `/api/*` but not on pages. Add a global `headers()` in `next.config.js` / `vercel.json`. _Highest technical priority; ~20 min._
+2. **🔴 Durable rate limiting NOT active — CONFIRMED.** `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN` are **not set in Vercel** (confirmed 2026-11-03), so `/api/chat` and `/api/generate` fall back to per-instance in-memory limiting = effectively none on serverless. Both call Claude (real cost) → a scripted client could run up the Anthropic bill. **Set the Upstash vars in Vercel (Production + Preview) + redeploy.** Code already supports it.
+3. **No error monitoring/alerting.** Failures only hit Vercel logs (why the Calendly 404 and demo-mode masking went unnoticed). Add Sentry or a Slack webhook on the API routes + client error boundary.
+4. **Redirect + HSTS hardening.** Apex → www and `/integration` → `/chess-clubs` are 307 (temporary) → make permanent 308/301 for SEO. Add `includeSubDomains; preload` to HSTS.
+5. **SEO technical depth.** No `<link rel="canonical">`, no JSON-LD structured data (Organization/LocalBusiness + Article for samples). High ROI for an SEO-selling site.
+6. **CI gate + booking smoke test.** Vercel builds but doesn't run Jest. Add a GitHub Action (type-check/lint/test on PRs) + a tiny Playwright test asserting the CTA → a 200 Calendly link and chat returns a reply — would auto-catch the Calendly-404 class of bug.
+7. **Minor:** sample diagrams use raw `<img>` not `next/image` (small LCP cost); `eslint@8` is EOL; add a global daily token-budget alarm on the chatbot.
+
+### Suggested order
+Quick, real-exposure wins first: **(1) page security headers**, **(2) set Upstash rate-limiting vars**. Then permanent redirects + HSTS hardening, canonical + JSON-LD, then error monitoring and CI. Entrepreneur items (lead capture, testimonials, own blog) are the growth levers but need owner input/content.
+
+**Claude can implement (no owner input needed):** security headers, permanent 308 redirects, HSTS hardening, canonical + JSON-LD, and a CI workflow — as one PR.
+**Owner actions:** set `UPSTASH_REDIS_REST_*` in Vercel; decide on lead-capture/testimonials/blog; choose an error-monitoring provider.
