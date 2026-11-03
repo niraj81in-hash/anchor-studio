@@ -6,7 +6,7 @@ export const SITE = {
   heroTagline: 'Content strategy for chess — by someone who actually plays.',
   domain:      'https://www.getanchorstudio.com',
   email:       'hello@getanchorstudio.com',
-  calendly:    process.env.NEXT_PUBLIC_CALENDLY_URL ?? 'https://calendly.com/nirajshriva',
+  calendly:    process.env.NEXT_PUBLIC_CALENDLY_URL ?? 'https://calendly.com/getanchorstudio',
 } as const;
 
 export const FOUNDER = {
