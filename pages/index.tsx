@@ -5,6 +5,7 @@ import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import FounderStrip from '@/components/FounderStrip';
 import ChatBot from '@/components/ChatBot';
+import Icon from '@/components/Icon';
 import { SITE, SERVICES, PRICING, HOW_IT_WORKS, PORTFOLIO_SAMPLES, POSITIONING, NICHES, THE_PROBLEM, PRESS, TESTIMONIALS } from '@/lib/config';
 
 export default function Home() {
@@ -57,18 +58,24 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Credibility strip */}
-          <div className="flex flex-wrap gap-10 mt-14 pt-10 border-t border-white/10">
+          {/* Credibility strip — two metrics, then the credential on its own terms */}
+          <div className="flex flex-wrap items-center gap-x-10 gap-y-6 mt-14 pt-10 border-t border-white/10">
             {[
-              { n: '72hrs',    l: 'First delivery'    },
-              { n: '15min',  l: 'Monthly time on your end' },
-              { n: 'National Master',    l: 'USCF rated' },
+              { n: '72hrs', l: 'First delivery' },
+              { n: '15min', l: 'Monthly time on your end' },
             ].map(({ n, l }) => (
               <div key={l}>
                 <div className="font-serif text-[2rem] text-white leading-none">{n}</div>
                 <div className="text-[0.7rem] text-white/45 mt-1 uppercase tracking-widest">{l}</div>
               </div>
             ))}
+            <div className="flex items-center gap-3 sm:pl-10 sm:border-l border-white/10">
+              <span className="text-[2.1rem] text-teal-mid leading-none" aria-hidden="true">♞</span>
+              <div>
+                <div className="text-white font-medium text-[0.95rem] leading-tight">National Master</div>
+                <div className="text-white/45 text-[0.78rem] mt-0.5">USCF-rated · chess fluency built in</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -103,7 +110,9 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-rule border border-rule rounded-xl overflow-hidden mt-10 reveal" style={{ transitionDelay: '0.1s' }}>
             {SERVICES.map(s => (
               <div key={s.name} className="bg-white p-7 hover:bg-[#fafaf8] transition-colors">
-                <div className="text-2xl mb-4">{s.icon}</div>
+                <div className="w-10 h-10 rounded-lg bg-teal-light flex items-center justify-center mb-4">
+                  <Icon name={s.icon} className="w-5 h-5 text-teal" />
+                </div>
                 <div className="font-medium text-[0.95rem] text-ink mb-2">{s.name}</div>
                 <div className="text-[0.85rem] text-mid leading-relaxed mb-4">{s.description}</div>
                 <a href={SITE.calendly} target="_blank" rel="noopener noreferrer"
@@ -147,7 +156,9 @@ export default function Home() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {POSITIONING.features.map((feature, i) => (
                 <div key={feature.title} className="text-center">
-                  <div className="text-3xl mb-3">{feature.icon}</div>
+                  <div className="w-11 h-11 rounded-lg bg-teal-light flex items-center justify-center mb-3 mx-auto">
+                    <Icon name={feature.icon} className="w-5 h-5 text-teal" />
+                  </div>
                   <div className="font-medium text-[0.95rem] text-ink mb-2">{feature.title}</div>
                   <div className="text-[0.85rem] text-mid leading-relaxed">{feature.description}</div>
                 </div>
@@ -158,7 +169,7 @@ export default function Home() {
       </section>
 
       {/* ── ABOUT / FOUNDER ───────────────────────────────────────── */}
-      <section className="bg-warm py-20 px-[6%]">
+      <section className="bg-white py-20 px-[6%]">
         <div className="max-w-4xl mx-auto">
           <div className="reveal text-center mb-12">
             <div className="text-6xl mb-6">♛</div>
@@ -179,7 +190,7 @@ export default function Home() {
               </p>
             </div>
             <div className="reveal" style={{ transitionDelay: '0.2s' }}>
-              <div className="bg-white border border-rule rounded-xl p-6 text-center">
+              <div className="bg-warm border border-rule rounded-xl p-6 text-center">
                 <div className="text-3xl mb-3">♛</div>
                 <div className="font-medium text-ink mb-2">Nivaan</div>
                 <div className="text-[0.9rem] text-mid">Chess National Master</div>
@@ -191,7 +202,7 @@ export default function Home() {
       </section>
 
       {/* ── PROOF: PRESS + TESTIMONIAL ────────────────────────────── */}
-      <section className="bg-white py-20 px-[6%]">
+      <section className="bg-warm py-20 px-[6%]">
         <div className="max-w-4xl mx-auto">
           <div className="reveal text-center">
             <p className="text-[0.72rem] font-medium uppercase tracking-widest text-teal mb-3">{PRESS.label}</p>
@@ -202,7 +213,7 @@ export default function Home() {
             </a>
           </div>
           {TESTIMONIALS.map(t => (
-            <figure key={t.author} className="reveal mt-10 bg-warm border border-rule rounded-xl p-8 sm:p-10" style={{ transitionDelay: '0.1s' }}>
+            <figure key={t.author} className="reveal mt-10 bg-white border border-rule rounded-xl p-8 sm:p-10" style={{ transitionDelay: '0.1s' }}>
               <blockquote className="font-serif text-[1.15rem] text-ink leading-relaxed">&ldquo;{t.quote}&rdquo;</blockquote>
               <figcaption className="mt-5 text-[0.9rem] text-mid">— {t.author}, <span className="text-ink">{t.role}</span></figcaption>
             </figure>
@@ -238,7 +249,7 @@ export default function Home() {
       </section>
 
       {/* ── WHO I WORK WITH ───────────────────────────────────────── */}
-      <section className="bg-white py-20 px-[6%]">
+      <section className="bg-warm py-20 px-[6%]">
         <div className="max-w-5xl mx-auto">
           <div className="reveal">
             <p className="text-[0.72rem] font-medium uppercase tracking-widest text-teal mb-2">Who I work with</p>
@@ -246,7 +257,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
             {NICHES.map((niche, i) => (
-              <div key={niche.label} className="reveal bg-warm border border-rule rounded-xl p-8" style={{ transitionDelay: `${i * 0.1}s` }}>
+              <div key={niche.label} className="reveal bg-white border border-rule rounded-xl p-8" style={{ transitionDelay: `${i * 0.1}s` }}>
                 <div className="font-medium text-[1.1rem] text-ink mb-3">{niche.label}</div>
                 <div className="text-[0.95rem] text-mid leading-relaxed">{niche.note}</div>
               </div>
@@ -256,7 +267,7 @@ export default function Home() {
       </section>
 
       {/* ── PRICING ───────────────────────────────────────────────── */}
-      <section className="bg-warm py-20 px-[6%]" id="pricing">
+      <section className="bg-white py-20 px-[6%]" id="pricing">
         <div className="max-w-5xl mx-auto">
           <div className="reveal">
             <p className="text-[0.72rem] font-medium uppercase tracking-widest text-teal mb-2">Founding-client pricing</p>
@@ -265,7 +276,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-10 reveal" style={{ transitionDelay: '0.1s' }}>
             {PRICING.map(plan => (
-              <div key={plan.name} className={`rounded-xl border p-7 flex flex-col relative transition-all hover:-translate-y-0.5 ${plan.popular ? 'bg-ink border-ink' : 'bg-white border-rule hover:border-teal-mid'}`}>
+              <div key={plan.name} className={`rounded-xl border p-7 flex flex-col relative transition-all hover:-translate-y-0.5 ${plan.popular ? 'bg-ink border-ink' : 'bg-warm border-rule hover:border-teal-mid'}`}>
                 {plan.popular && (
                   <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-teal text-white text-[0.68rem] font-semibold px-3 py-0.5 rounded-full uppercase tracking-wider whitespace-nowrap">
                     Most Popular
