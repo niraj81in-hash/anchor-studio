@@ -38,7 +38,7 @@ const INTEGRATIONS = [
   },
 ];
 
-const chessPlan = PRICING.find(plan => plan.name === 'Chess Club');
+const chessPlan = PRICING.find(plan => plan.name === 'Chess');
 
 export default function ChessClubsPage() {
   return (
