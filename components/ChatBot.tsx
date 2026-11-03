@@ -11,25 +11,8 @@ const SUGGESTIONS = [
   'Book a free call',
 ];
 
-const DEMO_RESPONSES: Record<string, string> = {
-  price:    "Pricing is tailored to each client, and founding-client rates are available for early clients. The best next step is a quick free call for a custom quote — want the booking link?",
-  cost:     "Pricing is tailored to each client, and founding-client rates are available for early clients. The best next step is a quick free call for a custom quote — want the booking link?",
-  much:     "Pricing is tailored to each client, and founding-client rates are available for early clients. The best next step is a quick free call for a custom quote — want the booking link?",
-  fast:     "Your first content batch lands within 72 hours of our kickoff — then it's consistent content every month with just one quick round of edits on your end.",
-  deliver:  "Your first content batch lands within 72 hours of our kickoff — then it's consistent content every month with just one quick round of edits on your end.",
-  book:     "You can book a free 30-minute discovery call — no pitch, just a clear plan. Grab a time via the booking link, or email hello@getanchorstudio.com.",
-  call:     "You can book a free 30-minute discovery call — no pitch, just a clear plan. Grab a time via the booking link, or email hello@getanchorstudio.com.",
-  chess:    "Chess organizations are exactly who Anchor Studio is built for — it's run by Nivaan, a Chess National Master. I handle newsletters, tournament recaps, player spotlights, and coaching content, written by someone who actually plays.",
-  offer:    "I create done-for-you content for chess organizations and education businesses: chess club & academy content, SEO blog posts, and email sequences. What kind of organization are you with?",
-};
-
-function getDemoResponse(text: string): string {
-  const t = text.toLowerCase();
-  for (const [key, response] of Object.entries(DEMO_RESPONSES)) {
-    if (t.includes(key)) return response;
-  }
-  return "Great question! I'm a founder-led studio creating done-for-you content for chess organizations and education businesses. Want to hear about services, turnaround, or booking a free call?";
-}
+const UNAVAILABLE_MESSAGE =
+  "I'm having trouble reaching the assistant right now. Please email hello@getanchorstudio.com and I'll get right back to you — or book a free call anytime.";
 
 export default function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
@@ -96,16 +79,16 @@ export default function ChatBot() {
       if (data.error && !data.reply) {
         throw new Error(data.error);
       }
-      const reply = data.reply ?? getDemoResponse(text);
+      const reply = data.reply ?? UNAVAILABLE_MESSAGE;
       setMessages(prev => [...prev, { role: 'assistant', content: reply }]);
     } catch (err) {
       const errorMsg = err instanceof Error ? err.message : 'Connection error';
       console.error('Chat error:', errorMsg);
-      
-      // Fallback to demo mode
-      await new Promise(r => setTimeout(r, 800));
-      setMessages(prev => [...prev, { role: 'assistant', content: getDemoResponse(text) }]);
-      setError('Running in demo mode. For live support, email hello@getanchorstudio.com');
+
+      // Fail honestly rather than fabricating a canned "demo" reply that hides
+      // the outage from both the visitor and us.
+      setMessages(prev => [...prev, { role: 'assistant', content: UNAVAILABLE_MESSAGE }]);
+      setError('Assistant is temporarily unavailable — email hello@getanchorstudio.com.');
     } finally {
       setIsLoading(false);
     }

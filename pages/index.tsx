@@ -1,24 +1,14 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { useEffect, useRef } from 'react';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
-import FounderStrip from '@/components/FounderStrip';
 import ChatBot from '@/components/ChatBot';
 import Icon from '@/components/Icon';
+import { useReveal } from '@/components/useReveal';
 import { SITE, SERVICES, PRICING, HOW_IT_WORKS, PORTFOLIO_SAMPLES, POSITIONING, NICHES, THE_PROBLEM, PRESS, TESTIMONIALS } from '@/lib/config';
 
 export default function Home() {
-  const revealRefs = useRef<HTMLElement[]>([]);
-
-  useEffect(() => {
-    const obs = new IntersectionObserver(
-      entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }),
-      { threshold: 0.08, rootMargin: '0px 0px -40px 0px' },
-    );
-    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-    return () => obs.disconnect();
-  }, []);
+  useReveal();
 
   return (
     <>
