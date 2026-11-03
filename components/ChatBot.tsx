@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect, useCallback } from 'react';
+import { track } from '@vercel/analytics';
 import type { Message } from '@/types';
 
 const SUGGESTIONS = [
@@ -63,6 +64,7 @@ export default function ChatBot() {
   }, [isOpen]);
 
   const toggleChat = () => {
+    if (!isOpen) track('chat_open');
     setIsOpen(o => !o);
     setShowBadge(false);
     if (!isOpen) setTimeout(() => inputRef.current?.focus(), 300);
