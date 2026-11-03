@@ -3,7 +3,8 @@ import Link from 'next/link';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import ChatBot from '@/components/ChatBot';
-import { SITE, PRICING } from '@/lib/config';
+import { useReveal } from '@/components/useReveal';
+import { SITE, PRICING, PRESS, TESTIMONIALS } from '@/lib/config';
 
 const INTEGRATIONS = [
   {
@@ -41,6 +42,7 @@ const INTEGRATIONS = [
 const chessPlan = PRICING.find(plan => plan.name === 'Chess');
 
 export default function ChessClubsPage() {
+  useReveal();
   return (
     <>
       <Head>
@@ -145,6 +147,24 @@ export default function ChessClubsPage() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── FEATURED IN US CHESS ──────────────────────────────────── */}
+      <section className="bg-warm py-20 px-[6%]">
+        <div className="max-w-4xl mx-auto text-center reveal">
+          <p className="text-[0.72rem] font-medium uppercase tracking-widest text-teal mb-3">{PRESS.label}</p>
+          <a href={PRESS.url} target="_blank" rel="noopener noreferrer"
+             className="inline-flex flex-col items-center gap-1 group">
+            <span className="font-serif text-[clamp(1.6rem,3vw,2.2rem)] text-ink tracking-tight group-hover:text-teal transition-colors">{PRESS.outlet}</span>
+            <span className="text-[0.85rem] text-mid max-w-md">{PRESS.blurb} <span className="text-teal">→</span></span>
+          </a>
+          {TESTIMONIALS.map(t => (
+            <figure key={t.author} className="mt-10 bg-white border border-rule rounded-xl p-8 sm:p-10 text-left">
+              <blockquote className="font-serif text-[1.15rem] text-ink leading-relaxed">&ldquo;{t.quote}&rdquo;</blockquote>
+              <figcaption className="mt-5 text-[0.9rem] text-mid">— {t.author}, <span className="text-ink">{t.role}</span></figcaption>
+            </figure>
+          ))}
         </div>
       </section>
 

@@ -100,11 +100,14 @@ export async function checkRateLimit(key: string): Promise<boolean> {
 
 // ── Input Sanitization ──────────────────────────────────────────
 export function sanitizeInput(input: string): string {
-  // Remove potentially dangerous characters but preserve content
+  // Light hygiene only: strip angle brackets to reduce the XSS surface if this
+  // text is ever rendered as HTML, and cap length. This is NOT prompt-injection
+  // defense — the content still reaches the model, so downstream code must treat
+  // model input/output as untrusted data, never as instructions.
   return input
-    .replace(/[<>]/g, '') // Remove angle brackets
+    .replace(/[<>]/g, '') // strip angle brackets (XSS-surface reduction)
     .trim()
-    .substring(0, 5000); // Max 5000 chars
+    .substring(0, 5000); // cap length
 }
 
 export function validateEmail(email: string): boolean {
