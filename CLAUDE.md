@@ -9,9 +9,10 @@ npm run dev          # Start development server at localhost:3000
 npm run build        # Production build
 npm run lint         # ESLint via next lint
 npm run type-check   # TypeScript check without emitting (tsc --noEmit)
+npm test             # Jest unit tests (with coverage)
 ```
 
-No test suite exists yet. Type-checking is the primary correctness gate.
+Jest tests live in `__tests__/` (run with `npm test`) and cover the security helpers (`lib/security`), the `/api/chat` and `/api/generate` routes, and the ErrorBoundary. Type-checking plus these tests are the correctness gates.
 
 ## Environment setup
 

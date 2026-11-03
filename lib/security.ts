@@ -113,7 +113,7 @@ export function validateEmail(email: string): boolean {
 }
 
 // ── CORS Headers ────────────────────────────────────────────────
-export function setCorsHeaders(res: NextApiResponse, allowedOrigins: string[] = ['https://www.getanchorstudio.com']) {
+export function setCorsHeaders(res: NextApiResponse) {
   const origin = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.getanchorstudio.com';
   
   res.setHeader('Access-Control-Allow-Credentials', 'true');
