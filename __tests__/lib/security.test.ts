@@ -49,33 +49,35 @@ describe('Security module', () => {
     });
   });
 
+  // With no Upstash credentials set in the test env, checkRateLimit uses the
+  // in-memory fallback — deterministic and synchronous under the hood.
   describe('checkRateLimit', () => {
-    it('should allow requests under the limit', () => {
+    it('should allow requests under the limit', async () => {
       const key = 'test-client';
       for (let i = 0; i < 29; i++) {
-        expect(checkRateLimit(key)).toBe(true);
+        expect(await checkRateLimit(key)).toBe(true);
       }
     });
 
-    it('should block requests over the limit', () => {
+    it('should block requests over the limit', async () => {
       const key = 'test-client-2';
       for (let i = 0; i < 30; i++) {
-        checkRateLimit(key);
+        await checkRateLimit(key);
       }
-      expect(checkRateLimit(key)).toBe(false);
+      expect(await checkRateLimit(key)).toBe(false);
     });
 
-    it('should reset limit after time window', () => {
+    it('should reset limit after time window', async () => {
       const key = 'test-client-3';
       for (let i = 0; i < 30; i++) {
-        checkRateLimit(key);
+        await checkRateLimit(key);
       }
-      
-      // Simulate time passing (in real test, would use fake timers)
+
+      // Simulate time passing
       jest.useFakeTimers();
       jest.advanceTimersByTime(61000); // 61 seconds
-      
-      expect(checkRateLimit(key)).toBe(true);
+
+      expect(await checkRateLimit(key)).toBe(true);
       jest.useRealTimers();
     });
   });
