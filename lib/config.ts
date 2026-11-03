@@ -1,4 +1,4 @@
-import type { Service, PricingPlan, PortfolioSample } from '@/types';
+import type { Service, PricingPlan, PortfolioSample, Testimonial } from '@/types';
 
 export const SITE = {
   name:        'Anchor Studio',
@@ -106,34 +106,62 @@ export const PORTFOLIO_SAMPLES: PortfolioSample[] = [
     ],
   },
   {
-    title: 'Chess Tournament Recap Blog Post',
-    type: 'Blog',
-    slug: 'chess-tournament-recap',
-    excerpt: 'Detailed tournament analysis with game highlights, key moments, and lessons learned. Appeals to both current families and prospective students looking for a competitive program.',
-    content: 'The [Tournament Name] was a resounding success for our young chess warriors. With 47 participants from 12 different schools, the competition was fierce but the sportsmanship was exemplary...',
+    title: 'Girsh vs. Gao — Princeton National Chess Day Open',
+    type: 'Game Analysis',
+    slug: 'girsh-gao-national-chess-day',
+    featured: true,
+    sourceLabel: 'Featured in US Chess',
+    sourceUrl: 'https://new.uschess.org/news/2026-national-chess-day-wrap',
+    excerpt: 'A positional masterclass from the Premier section — FM Daniel Girsh outplays Vincent Gao and converts a series of small advantages. Annotated by NM Nivaan Shrivastava and featured by US Chess on National Chess Day.',
+    content: 'FM Daniel Girsh (2392) vs. Vincent Gao (1765), Princeton National Chess Day Open, Round 2 — a lesson in positional play and converting small advantages.',
     sections: [
       {
-        body: 'Forty-seven students. Twelve schools. One very proud coaching staff.\n\nLast weekend, our Westfield Chess Academy team competed at the NJ State Scholastic Championship in Cherry Hill — and came home with first place in the U1200 section, a second-place finish in U800, and four individual medals. Here\'s the full breakdown.',
+        body: 'The Atlantic Chess Association organized the Princeton National Chess Day Open at the Princeton Marriott Hotel in New Jersey. It was an excellently run event, and the spacious venue, surrounded by the colors of fall, made for a great tournament experience. The tournament produced many wonderful games, both on and off the DGT broadcast boards. I selected the game below for its instructive value in positional play and in converting relatively small advantages.\n\nRound 2 of the Premier section featured FM Daniel Girsh (2392) against Vincent Gao (1765). Despite the sizable rating gap, the two players produced an excellent game in which Girsh gradually outplayed his opponent positionally. Let’s dive into the critical moments and instructive points.',
       },
       {
-        heading: 'The Tournament',
-        body: 'The NJ State Scholastic Championship is one of the most competitive scholastic events in the region, drawing top programs from across New Jersey and parts of Pennsylvania. This year\'s tournament used a 5-round Swiss format with G/45+5 time controls — long enough for real chess, fast enough to keep the day moving.\n\nOur players competed across four sections: U800, U1000, U1200, and U1500. We entered 14 students total.',
+        heading: 'The opening: a Queen’s Indian / Catalan hybrid',
+        body: 'Although the ECO classification marks the opening as a Queen’s Indian Defense, the structure quickly took on a Catalan flavor. White chose a flexible fianchetto setup with Nf3, c4, g3 and Bg2, while Black responded with the classical Queen’s Indian formation of ...Nf6, ...e6, ...b6 and ...Bb7. By move 9, the position was a typical hybrid: Black had established central tension, and White’s long diagonal pointed toward the queenside.',
+        image: '/samples/girsh-gao/diagram1.png',
+        caption: 'The Queen’s Indian / Catalan hybrid after move 9.',
       },
       {
-        heading: 'Section Results',
-        body: 'U1200 Section — 1st Place (Team)\nOur strongest section finish of the year. Marcus Chen led the team with 4.5/5, earning Board 1 gold. Priya Patel scored 4/5 on Board 2, and Kevin Walsh contributed 3.5/5 on Board 3. The team finished a full point ahead of second place.\n\nU800 Section — 2nd Place (Team)\nOur youngest competitors represented the academy with skill and heart. Sofia Rodriguez earned individual bronze with 3.5/5 in her first-ever rated tournament. Three of our four U800 players set new personal rating bests.\n\nU1500 Section\nJordana Park had our individual highlight of the day — a clean 5/5 finish for individual gold, including a win against the top seed in round 4.',
+        heading: 'Move 11: the e4 break Black should have stopped',
+        body: 'A subtle turning point came on move 11. Black played 11...Nd7, a move that looks natural but carries strategic consequences. With the knight on d7, White could immediately play 12.e4, gaining central space and activating the g2-bishop. The more resilient defensive idea was 11...f5, which would have prevented e4 entirely and challenged White’s center. Once e4 appeared on the board, White’s pieces gained freedom, and the game began tilting toward a space-driven positional battle.',
       },
       {
-        heading: 'Game of the Tournament: Marcus vs. Defending Champion',
-        body: 'Round 4, Board 1. Marcus (Westfield, 1187) vs. Ryan M. (Ridgewood, 1203).\n\nRyan was the defending U1200 champion. Marcus had just come off a tense draw in round 3 and needed a win to stay in first.\n\nMarcus chose the Sicilian Najdorf — an aggressive choice that signaled he came to fight, not hold. By move 18, he had established a protected passed pawn on d5 with his rooks doubling on the c-file. Ryan defended resourcefully, but Marcus converted a technically precise endgame in 47 moves.\n\nAfter the game, Ryan immediately offered a handshake and said, "That d5 pawn — I never found the right time to take it." Marcus smiled: "That was the plan."\n\nWe\'ll be posting a full annotated version of this game in our newsletter next week.',
+        heading: 'A space-driven middlegame',
+        body: 'White expanded on the queenside with b4 and a3, while Black sought counterplay with ...b5 and ...a5. The position after 15.b4 highlighted the structural tension: White had more space, but Black had active possibilities on the queenside. Neither side was winning; the game was simply entering a phase where long-term plans mattered more than immediate tactics.',
+        image: '/samples/girsh-gao/diagram2.png',
+        caption: 'After 15.b4: White has more space; Black eyes queenside counterplay.',
       },
       {
-        heading: 'Coaching Takeaways',
-        body: 'A few patterns we saw across the day that we\'ll be addressing in upcoming practice sessions:\n\n1. Time management: Several students in the U800 section spent too much time in the opening and rushed the middlegame. We\'ll be doing a clock management drill this week.\n\n2. Endgame conversion: Our U1200 team converted well, but two games that should have been wins became draws due to king activity errors. King activity drills next session.\n\n3. Positional patience: The strongest performances of the day all had one thing in common — the players didn\'t rush. They improved piece coordination before attacking. This is the culture we\'re building.',
+        heading: '27.Nd3 — a pawn for the c5 outpost',
+        body: 'One of the most instructive decisions came with 27.Nd3. White voluntarily allowed Black to capture the d4-pawn, but in return secured control of the dark squares and prepared a strong outpost on c5. This was a positional pawn sacrifice: the d-pawn mattered less than the long-term grip on c5 and the ability to restrict Black’s minor pieces.\n\nInterestingly, the position also contained a tactical alternative: Nxf7, a thematic sacrifice to expose Black’s king. The line runs Nxf7 Kxf7 Qxh7 Rf8 Qh5+ g6, and if ...Kg8, then Be4+ is strong. After Qh7+ Ke8 Qxg6+ Kd7 h5, White would have obtained compensation in the form of Black’s weakened king and passed kingside pawns. White chose the quieter positional route with Nd3, but both ideas were playable and instructive.',
+        image: '/samples/girsh-gao/diagram3.png',
+        caption: 'After 27.Nd3: White offers the d4-pawn in exchange for the c5 outpost.',
       },
       {
-        heading: 'What\'s Next',
-        body: 'May 10 — Spring Club Championship (in-house). All students welcome.\nMay 24–25 — Empire City Open (NYC). Advanced students, registration closes May 15.\n\nTo our students: you made the academy proud. To our parents: thank you for getting up early and cheering loudly.\n\nNow let\'s get back to work.',
+        heading: '29.Nc5 — the knight that changed the game',
+        body: 'The game’s momentum shifted decisively with 29.Nc5, a move that pressured the queen, the b7-bishop and several key squares at once. Black’s pieces became difficult to coordinate, and White’s activity kept growing.',
+        image: '/samples/girsh-gao/diagram4.png',
+        caption: 'After 29.Nc5: the knight hits the queen, the b7-bishop and key squares.',
+      },
+      {
+        heading: 'Tactics in service of strategy',
+        body: 'Soon after, White played 34.Nxe6, combining tactical calculation with positional logic. The knight could not be taken: 34...fxe6 would run into 35.Bxe6+, winning the queen. White gained a pawn and further exposed Black’s king. This was followed by 35.Nxg7, another tactical idea: if 35...Kxg7, then 36.Qd4+ regains the knight. Even though Black can later play ...Qxe4, the material balance remains equal while White’s light-squared bishop becomes significantly more active than Black’s. These sequences show how tactical motifs can reinforce positional advantages.',
+      },
+      {
+        heading: 'Converting the advantage',
+        body: 'There was one moment where greater precision was possible. Instead of 38.Bg2, White had the cleaner 38.Qd8+ Qe8 39.Qf6, which would have maintained maximum pressure and reduced counterplay. Even so, the position remained favorable, and White continued to improve his pieces. The h6-pawn eventually fell, and Black’s position deteriorated steadily.\n\nThe final phase was a matter of technique: White converted the advantage methodically, and Black resigned once the weaknesses on both the queenside and kingside became too difficult to defend.',
+        image: '/samples/girsh-gao/diagram5.png',
+        caption: 'The conversion phase: White’s queen and bishop dominate.',
+      },
+      {
+        heading: 'Key takeaways',
+        body: '• Stop the key pawn break. 11...f5 would have kept e4 off the board. Once White achieved it, Black was playing for equality without space.\n\n• Squares can be worth more than pawns. 27.Nd3 gave up the d4-pawn to secure c5 and the dark squares — a long-term trade that paid off.\n\n• Tactics serve strategy. 34.Nxe6 and 35.Nxg7 worked because of the follow-ups Bxe6+ and Qd4+, turning a positional edge into a lasting advantage.\n\n• Keep the pressure on. Even when winning, look for the most forcing continuation (38.Qd8+) to deny counterplay.',
+      },
+      {
+        body: 'Overall, this was a great game that I enjoyed analyzing — kudos to both players!\n\n— NM Nivaan Shrivastava',
       },
     ],
   },
@@ -229,3 +257,19 @@ export const COMPARE_ROWS = [
   { label: 'Strategic keyword planning',agency: 'Add-on',         freelancer: 'Rarely',      anchor: 'Included'         },
   { label: 'Cancel anytime',            agency: 'Often locked in',freelancer: 'Yes',         anchor: 'Yes — 30 days'    },
 ] as const;
+
+// ── Press / credibility ──────────────────────────────────────────────
+export const PRESS = {
+  label: 'Featured in',
+  outlet: 'US Chess',
+  blurb: 'Game analysis featured in the 2026 National Chess Day Wrap-Up and Game of the Week',
+  url: 'https://new.uschess.org/news/2026-national-chess-day-wrap',
+} as const;
+
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    quote: 'Nivaan understands the art of annotating a chess game. While key variations are certainly there, his excellent and intuitive layout allows players of various skill levels to understand the narrative flow of the game, walking away having learned something rather than simply having been overwhelmed by engine analysis.',
+    author: 'JJ Lang',
+    role: 'Digital Editor, US Chess',
+  },
+];

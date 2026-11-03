@@ -70,6 +70,10 @@ export interface PricingPlan {
 export interface PortfolioSampleSection {
   heading?: string;
   body: string;
+  /** Optional diagram/illustration shown after the body (path under /public). */
+  image?: string;
+  /** Caption rendered beneath the image. */
+  caption?: string;
 }
 
 export interface PortfolioSample {
@@ -79,6 +83,18 @@ export interface PortfolioSample {
   content: string;
   slug: string;
   sections: PortfolioSampleSection[];
+  /** Surfaces the sample first and shows a credibility badge. */
+  featured?: boolean;
+  /** Short "as featured in" label, e.g. "Featured in US Chess". */
+  sourceLabel?: string;
+  /** External link backing the sourceLabel (e.g. the published article). */
+  sourceUrl?: string;
+}
+
+export interface Testimonial {
+  quote: string;
+  author: string;
+  role: string;
 }
 
 export interface PositioningFeature {

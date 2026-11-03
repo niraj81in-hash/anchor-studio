@@ -5,7 +5,7 @@ import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import FounderStrip from '@/components/FounderStrip';
 import ChatBot from '@/components/ChatBot';
-import { SITE, SERVICES, PRICING, HOW_IT_WORKS, PORTFOLIO_SAMPLES, POSITIONING, NICHES, THE_PROBLEM } from '@/lib/config';
+import { SITE, SERVICES, PRICING, HOW_IT_WORKS, PORTFOLIO_SAMPLES, POSITIONING, NICHES, THE_PROBLEM, PRESS, TESTIMONIALS } from '@/lib/config';
 
 export default function Home() {
   const revealRefs = useRef<HTMLElement[]>([]);
@@ -190,6 +190,26 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── PROOF: PRESS + TESTIMONIAL ────────────────────────────── */}
+      <section className="bg-white py-20 px-[6%]">
+        <div className="max-w-4xl mx-auto">
+          <div className="reveal text-center">
+            <p className="text-[0.72rem] font-medium uppercase tracking-widest text-teal mb-3">{PRESS.label}</p>
+            <a href={PRESS.url} target="_blank" rel="noopener noreferrer"
+               className="inline-flex flex-col items-center gap-1 group">
+              <span className="font-serif text-[clamp(1.6rem,3vw,2.2rem)] text-ink tracking-tight group-hover:text-teal transition-colors">{PRESS.outlet}</span>
+              <span className="text-[0.85rem] text-mid max-w-md">{PRESS.blurb} <span className="text-teal">→</span></span>
+            </a>
+          </div>
+          {TESTIMONIALS.map(t => (
+            <figure key={t.author} className="reveal mt-10 bg-warm border border-rule rounded-xl p-8 sm:p-10" style={{ transitionDelay: '0.1s' }}>
+              <blockquote className="font-serif text-[1.15rem] text-ink leading-relaxed">&ldquo;{t.quote}&rdquo;</blockquote>
+              <figcaption className="mt-5 text-[0.9rem] text-mid">— {t.author}, <span className="text-ink">{t.role}</span></figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
       {/* ── PORTFOLIO / SAMPLE WORK ───────────────────────────────── */}
       <section className="bg-white py-20 px-[6%]" id="portfolio">
         <div className="max-w-5xl mx-auto">
@@ -198,10 +218,13 @@ export default function Home() {
             <h2 className="font-serif text-[clamp(1.9rem,3vw,2.8rem)] text-ink tracking-tight text-center">Content I&apos;ve created for chess and education clients.</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
-            {PORTFOLIO_SAMPLES.map((sample, i) => (
+            {[...PORTFOLIO_SAMPLES].sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0)).map((sample, i) => (
               <div key={sample.title} className="reveal bg-warm border border-rule rounded-xl p-6" style={{ transitionDelay: `${i * 0.1}s` }}>
-                <div className="flex items-center gap-2 mb-3">
+                <div className="flex items-center gap-2 mb-3 flex-wrap">
                   <span className="text-[0.75rem] font-medium text-teal bg-teal-light px-2 py-0.5 rounded uppercase tracking-wider">{sample.type}</span>
+                  {sample.sourceLabel && (
+                    <span className="text-[0.72rem] font-semibold text-white bg-teal px-2 py-0.5 rounded uppercase tracking-wider">★ {sample.sourceLabel}</span>
+                  )}
                 </div>
                 <div className="font-medium text-[0.95rem] text-ink mb-3">{sample.title}</div>
                 <div className="text-[0.85rem] text-mid leading-relaxed mb-4">{sample.excerpt}</div>

@@ -53,6 +53,16 @@ export default function SamplePage({ sample }: Props) {
           <p className="text-white/55 mt-4 text-[1rem] leading-relaxed max-w-xl">
             {sample.excerpt}
           </p>
+          {sample.sourceUrl && (
+            <a
+              href={sample.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-5 text-teal-mid text-[0.85rem] font-medium hover:text-white transition-colors"
+            >
+              {sample.sourceLabel ?? 'Featured'} →
+            </a>
+          )}
         </div>
       </section>
 
@@ -61,7 +71,9 @@ export default function SamplePage({ sample }: Props) {
         <div className="max-w-3xl mx-auto">
           <div className="bg-white border border-rule rounded-xl p-8 sm:p-12">
             <p className="text-[0.75rem] uppercase tracking-widest text-mid mb-8 pb-4 border-b border-rule">
-              Sample content — representative of actual deliverable quality
+              {sample.sourceUrl
+                ? 'Published work — an expanded version of analysis featured by US Chess'
+                : 'Sample content — representative of actual deliverable quality'}
             </p>
             {sample.sections.map((section, i) => (
               <div key={i} className={i > 0 ? 'mt-8' : ''}>
@@ -73,6 +85,22 @@ export default function SamplePage({ sample }: Props) {
                 <p className="text-[0.95rem] text-mid leading-relaxed whitespace-pre-line">
                   {section.body}
                 </p>
+                {section.image && (
+                  <figure className="mt-6">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={section.image}
+                      alt={section.caption ?? section.heading ?? sample.title}
+                      loading="lazy"
+                      className="w-full max-w-md mx-auto rounded-lg border border-rule"
+                    />
+                    {section.caption && (
+                      <figcaption className="text-center text-[0.8rem] text-mid mt-2 italic">
+                        {section.caption}
+                      </figcaption>
+                    )}
+                  </figure>
+                )}
               </div>
             ))}
           </div>
